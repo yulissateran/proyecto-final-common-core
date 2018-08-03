@@ -1,0 +1,44 @@
+{
+  "name": "proyecto-final-common-core",
+  "version": "1.0.0",
+  "main": "src/index.html",
+  "license": "MIT",
+  "scripts": {
+    "htmlhint": "htmlhint  src/*.html test/*.html",
+    "eslint": "eslint --ext .js src/model/ src/controller test/",
+    "pretest": "npm run eslint && npm run htmlhint",
+    "test-browser": "opener ./test/index.html",
+    "test-node": "nyc mocha ./test/headless.js",
+    "test": "npm run test-node && npm run test-browser"
+  },
+  "dependencies": {
+    "chai": "^4.1.2",
+    "csshint": "^0.3.3",
+    "htmlhint": "^0.9.13",
+    "minimatch": "^3.0.4",
+    "mocha": "^5.2.0",
+    "nyc": "^11.7.1",
+    "opener": "^1.4.3"
+  },
+  "description": " ",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "eslint": "^5.2.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fiorellasaro/proyecto-final-common-core.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/fiorellasaro/proyecto-final-common-core/issues"
+  },
+  "homepage": "https://github.com/fiorellasaro/proyecto-final-common-core#readme"
+}
