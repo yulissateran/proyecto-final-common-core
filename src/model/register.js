@@ -25,8 +25,8 @@ navigator.mediaDevices.getUserMedia({
 });
 /* ******************************************************Toma fotos**********************************************************************/
 window.takePicture = () => {
-  canvas.getContext('2d').drawImage(camera, 0, 0, 300, 150);
-  let img = canvas.toDataURL('image/png');
+  canvas.getContext('2d').drawImage(camera, 0, 0, 220, 180);
+  let img = canvas.toDataURL('image/jgeg', 0.65);
   refPicturesBd.push({
     url: img
   });
@@ -44,7 +44,7 @@ refPicturesBd.on('value', (snapshot) => {
     if (element.val().url) {
       document.getElementById('divImagenes').innerHTML += `
       <div>
-      <img src=${element.val().url}/><br/>
+      <img src="${element.val().url}"/><br/>
       <button id="${element.key}" onclick="remove('${element.key}')">Borrar</button>
       </div>`;
     }
