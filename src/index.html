@@ -5,17 +5,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Registro de visitante</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" media="screen" href="view/assets/css/index.css" />
-    
+  <link rel="stylesheet" type="text/css" media="screen" href="view/assets/css/index.css" /> 
 </head>
 <body>
   <header>Te damos la bienvenida</header>
   <img src="view/assets/img/comunal-logo.png" alt="logo comunal">
   <div id="optionsContainer" >
-    <button id="checkoutButton">check out</button>
-    <button id="checkinButton">check in</button>
-    <button id="registerButton">primera visita</button>
+    <button class="indexButtons" id="checkoutButton"> <img class="arrowIcons" src="view/assets/img/back.png" alt="right icon"> check out</button>
+    <button class="indexButtons" id="checkinButton"> check in <img class="arrowIcons" src="view/assets/img/right-arrow.png" alt="right icon"> </button>
   </div>
+
+  <button id="registerButton"><img id="userIcon" src="view/assets/img/user.png" alt="user icon"> <a>Ya estuve aquí</a></button>
     
 
     <script src="controller/index.js"></script>

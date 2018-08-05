@@ -1,3 +1,7 @@
+*{
+    font-family: 'Questrial', sans-serif;
+}
+
 #photoContainer, #photoRegisterContainer, #photoContainer{
 display: none;
 }

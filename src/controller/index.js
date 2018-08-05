@@ -1,4 +1,4 @@
-document.getElementById('registerButton').addEventListener('click', ()=>{
-    window.location.href = "view/register.html";
+document.getElementById('checkinButton').addEventListener('click', ()=>{
+    window.location.href = "view/check-in.html";
 
 });
