@@ -25,7 +25,7 @@ navigator.mediaDevices.getUserMedia({
 });
 /* ******************************************************Toma fotos**********************************************************************/
 window.takePicture = () => {
-  canvas.getContext('2d').drawImage(camera, 0, 0, 220, 180);
+  canvas.getContext('2d').drawImage(camera, 0, 0, 250, 250);
   let img = canvas.toDataURL('image/jgeg', 0.65);
   refPicturesBd.push({
     url: img
@@ -38,7 +38,7 @@ const remove = (keyImagen) => {
 };
 
 /* **************************************Muestra fotos*********************************************************/
-refPicturesBd.on('value', (snapshot) => {
+/* refPicturesBd.on('value', (snapshot) => {
   document.getElementById('divImagenes').innerHTML = '';
   snapshot.forEach(element => {
     if (element.val().url) {
@@ -49,5 +49,5 @@ refPicturesBd.on('value', (snapshot) => {
       </div>`;
     }
   });
-});
+}); */
 

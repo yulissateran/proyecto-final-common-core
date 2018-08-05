@@ -8,61 +8,78 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="assets/css/check-in.css" />
   <link rel="stylesheet" type="text/css" media="screen" href="assets/css/index.css" />
-  <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
 </head>
 
 <body>
   <div id="registerContainer">
-    <header>Check-in</header>
+    <header>Ingrese sus datos</header>
 
     <form>
-      <input type="text" placeholder="Nombre" id="name">
-      <input type="text" placeholder="Apellido" id="lastName">
-      <input type="text" placeholder="DNI" id="identification">
+      <div class="inputContainer">
+        <label for="name">Nombres</label>
+        <input type="text"  id="name">
+      </div>
+      <div class="inputContainer">
+        <label for="lastName">Apellidos</label>
+        <input type="text" id="lastName">
+      </div>
+      <div class="inputContainer">
+        <label for="identification">DNI</label>
+        <input type="text"  id="identification">
+      </div>
     </form>
 
-    <p>¿A qué oficina te diriges?</p>
-    <select name="comunal offices" id="comunalOffices">
-      <option value="comunal">Comunal</option>
-      <option value="laboratoria">Laboratoria</option>
-    </select>
-
-    <p>¿A quien estás visitando?</p>
-    <select name="employees" id="employees">
-      <option>Alejandra</option>
-      <option>Bea</option>
-      <option>Gonzalo</option>
-      <option>Ruth</option>
-    </select>
-
-    <button class="nextButton">Siguiente</button>
+    <div class="visited">
+      <p>Empresa que visita</p>
+      <select name="comunal offices" id="comunalOffices">
+        <option value="comunal">Comunal</option>
+        <option value="laboratoria">Laboratoria</option>
+      </select>
+    </div>
+    
+    <div class="visited">
+      <p>Persona a la que visita</p>
+      <select name="employees" id="employees">
+        <option>Alejandra</option>
+        <option>Bea</option>
+        <option>Gonzalo</option>
+        <option>Ruth</option>
+      </select>
+    </div>
+    <div class="buttonsContainer">
+        <button class="checkInButtons" id="back"> <img class="arrowIcons" src="assets/img/back.png"> VOLVER </button>
+        <button class="checkInButtons" id="next">SEGUIR <img class="arrowIcons" src="assets/img/right-arrow.png" alt="right icon"> </button>
+    </div>
+    
   </div>
-
+ 
+  <div id="logoContainer">
+      <img src="assets/img/comunal-logo.png" alt="logo comunal">
+  </div>
 
   <div id="photoRegisterContainer">
     <h1>¡Sonrie!</h1>
     <div id="cameraContainer">
-      <div id="camera">
-          <video id="video" ></video>
-      </div>
+      <video id="video" ></video>  
+          
 
-      
-      <canvas id="canvas" style="display: none;" width="220" height="180"></canvas>
+      <canvas id="canvas" style="display: none;" width="250" height="250"></canvas>
       <button id="takePicture">Tomar foto</button>
-      <img id="img" >
-      <div id="divImagenes"></div>
-
+      
     </div>
 
     <div id="photoContainer">
-      <div id="photo">
-
+      <div id="image">
+        <img id="img">
       </div>
+      
+     <!--  <div id="divImagenes"></div> -->
+     
 
-      <div id="buttonOption">
-        <button id="anotherPic">Otra foto</button>
-        <button class="nextButton">Siguiente</button>
-      </div>
+     <div class="buttonsContainer">
+        <button class="checkInButtons" id="anotherPic"> <img class="arrowIcons" src="assets/img/back.png"> VOLVER </button>
+        <button class="checkInButtons" id="nextStep">SEGUIR <img class="arrowIcons" src="assets/img/right-arrow.png" alt="right icon"> </button>
+    </div>
     </div>
   </div>
   <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
