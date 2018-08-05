@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Registro de visitante</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="assets/css/register.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="assets/css/index.css" />
+</head>
+
+<body>
+  <div id="registerContainer">
+    <header>Registro</header>
+
+    <form>
+      <input type="text" placeholder="Nombre" id="name">
+      <input type="text" placeholder="Apellido" id="lastName">
+      <input type="text" placeholder="DNI" id="identification">
+    </form>
+
+    <p>¿A qué oficina te diriges?</p>
+    <select name="comunal offices" id="comunalOffices">
+      <option value="comunal">Comunal</option>
+      <option value="laboratoria">Laboratoria</option>
+    </select>
+
+    <p>¿A quien estás visitando?</p>
+    <select name="employees" id="employees">
+      <option>Alejandra</option>
+      <option>Bea</option>
+      <option>Gonzalo</option>
+      <option>Ruth</option>
+    </select>
+
+    <button class="nextButton">Siguiente</button>
+  </div>
+
+
+  <div id="photoRegisterContainer">
+    <h1>¡Sonrie!</h1>
+    <div id="cameraContainer">
+      <div id="camera">
+          <video id="video" ></video>
+      </div>
+
+      
+      <canvas id="canvas" style="display: none;"></canvas>
+      <button id="takePicture">Tomar foto</button>
+      <img id="img" >
+      <div id="divImagenes"></div>
+
+    </div>
+
+    <div id="photoContainer">
+      <div id="photo">
+
+      </div>
+
+      <div id="buttonOption">
+        <button id="anotherPic">Otra foto</button>
+        <button class="nextButton">Siguiente</button>
+      </div>
+    </div>
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+  <script src="../model/register.js"></script>
+  <script src="../controller/register.js"></script>
+ 
+</body>
+
+</html>
