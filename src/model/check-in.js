@@ -33,15 +33,17 @@ window.validateFormVisitor = (valuesFormVisitor, visitorInformation) =>{
 
   if (nameValidation && lastNameValidation && identificationValidation) { 
     window.writeDataVisitorInObject(valuesFormVisitor, visitorInformation);
+    document.getElementById('registerContainer').style.display = 'none';
+    document.getElementById('photoRegisterContainer').style.display = 'inherit';
     return true;
   } else if (!nameValidation) {
-    valuesFormVisitor.messageErrorName.innerHTML = '';
+    valuesFormVisitor.messageErrorName.innerHTML = '<em>Este campo debe tener mas de 7 letras</em>';
     return false;
   } else if (!lastNameValidation) {
-    valuesFormVisitor.messageErrorLastName.innerHTML = '';
+    valuesFormVisitor.messageErrorLastName.innerHTML = '<em>Este campo debe tener mas de 7 letras</em>';
     return false;
   } else if (!identificationValidation) {
-    valuesFormVisitor.messageErrorIdentification.innerHTML = '';
+    valuesFormVisitor.messageErrorIdentification.innerHTML = '<em>Este campo debería tener 8 números</em>';
     return false;
   }
 };

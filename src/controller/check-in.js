@@ -22,12 +22,8 @@ document.getElementById('next').addEventListener('click', () => {
     messageErrorIdentification: document.getElementById('msgErrorIdentification'),
   };
 
-  window.validateFormVisitor(valuesFormVisitor, window.visitorInformation)
-  document.getElementById('registerContainer').style.display = 'none';
-  document.getElementById('photoRegisterContainer').style.display = 'inherit';
+  window.validateFormVisitor(valuesFormVisitor, window.visitorInformation);
   window.accessTheCamera(camera);
-
-
 });
 
 
