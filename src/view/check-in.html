@@ -19,20 +19,23 @@
         <label for="name">Nombres</label>
         <input type="text"  id="name">
       </div>
+      <div id="msgErrorName"></div>
       <div class="inputContainer">
         <label for="lastName">Apellidos</label>
         <input type="text" id="lastName">
       </div>
+      <div id="msgErrorLastName"></div>
       <div class="inputContainer">
         <label for="identification">DNI</label>
         <input type="text"  id="identification">
       </div>
+      <div id="msgErrorIdentification"></div>
     </form>
 
     <div class="visited">
       <p>Empresa que visita</p>
       <select name="comunal offices" id="comunalOffices">
-        <option value="comunal">Comunal</option>
+        <option value="comunal" selected>Comunal</option>
         <option value="laboratoria">Laboratoria</option>
       </select>
     </div>
@@ -40,10 +43,10 @@
     <div class="visited">
       <p>Persona a la que visita</p>
       <select name="employees" id="employees">
-        <option>Alejandra</option>
-        <option>Bea</option>
-        <option>Gonzalo</option>
-        <option>Ruth</option>
+        <option value="Alejandra" selected>Alejandra</option>
+        <option value="Bea">Bea</option>
+        <option value="Gonzalo">Gonzalo</option>
+        <option value="Ruth">Ruth</option>
       </select>
     </div>
     <div class="buttonsContainer">
@@ -83,6 +86,7 @@
     </div>
   </div>
   <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+  <script src="../model/functions-validations.js"></script>
   <script src="../model/check-in.js"></script>
   <script src="../controller/check-in.js"></script>
  
