@@ -9,33 +9,104 @@ let config = {
 };
 firebase.initializeApp(config);
 /* *****************************************************Variables************************************************************************/
-const refPicturesBd = firebase.database().ref('pictures');
-const camera = document.getElementById('video');
-const currentimg = document.getElementById('img');
-const canvas = document.getElementById('canvas');
+window.referenceDatabase = firebase.database();
+
+window.visitorInformation = {
+  nameVisitor: null,
+  lastNameVisitor: null,
+  identificationVisitor: null,
+  pictureVisitor: null,
+  visitOf: {
+    ofice: null,
+    nameVisited: null
+  }
+};
+
+window.validateFormVisitor = (valuesFormVisitor, visitorInformation) =>{
+  console.log(window.visitorInformation);
+  valuesFormVisitor.messageErrorName.innerHTML = '';
+  valuesFormVisitor.messageErrorLastName.innerHTML = '';
+  valuesFormVisitor.messageErrorIdentification.innerHTML = '';
+  const nameValidation = window.validatorName(valuesFormVisitor.name);
+  const lastNameValidation = window.validatorName(valuesFormVisitor.lastName);
+  const identificationValidation = window.validatorIdentification(valuesFormVisitor.identification);
+
+  if (nameValidation && lastNameValidation && identificationValidation) { 
+    window.writeDataVisitorInObject(valuesFormVisitor, visitorInformation);
+    return true;
+  } else if (!nameValidation) {
+    valuesFormVisitor.messageErrorName.innerHTML = '';
+    return false;
+  } else if (!lastNameValidation) {
+    valuesFormVisitor.messageErrorLastName.innerHTML = '';
+    return false;
+  } else if (!identificationValidation) {
+    valuesFormVisitor.messageErrorIdentification.innerHTML = '';
+    return false;
+  }
+};
+
+window.writeDataVisitorInObject = ( valuesFormVisitor, visitorInformation)=>{
+  console.log(window.visitorInformation);
+  visitorInformation.nameVisitor = valuesFormVisitor.name;
+  visitorInformation.lastNameVisitor = valuesFormVisitor.lastName;
+  visitorInformation.identificationVisitor = valuesFormVisitor.identification;
+  visitorInformation.visitOf.ofice = valuesFormVisitor.visitOf.ofice;
+  visitorInformation.visitOf.nameVisited = valuesFormVisitor.visitOf.employe;
+  console.log(window.visitorInformation);
+  window.accessTheCamera();
+  return visitorInformation;
+};
+
 /* ***************************************************Acceso a la cámara***************************************************************/
-navigator.mediaDevices.getUserMedia({ 
-  audio: false, 
-  video: true 
-}).then((stream) => {
-  camera.srcObject = stream;
-  camera.onloadedmetadata = () => camera.play();
-}).catch((error) => {
-  console.log(error);
-});
+window.accessTheCamera = (camera)=>{
+  console.log(window.visitorInformation);
+  navigator.mediaDevices.getUserMedia({ 
+    audio: false, 
+    video: true 
+  }).then((stream) => {
+    camera.srcObject = stream;
+    camera.onloadedmetadata = () => camera.play();
+  }).catch((error) => {
+    console.log(error);
+  });
+};
+
 /* ******************************************************Toma fotos**********************************************************************/
-window.takePicture = () => {
+window.takePicture = (currentImg, canvas, camera, visitorInformation) => {
   canvas.getContext('2d').drawImage(camera, 0, 0, 250, 250);
   let img = canvas.toDataURL('image/jgeg', 0.65);
-  refPicturesBd.push({
-    url: img
+  visitorInformation.pictureVisitor = img;
+  console.log(window.visitorInformation);
+  currentImg.setAttribute('src', img);
+  return img;
+};
+/* *************************************Escribe datos en firebase*********************************************+ */
+window.registerVisitorInFirebase = (referenceDatabase, visitorInformation) => {
+  console.log(window.visitorInformation);
+  referenceDatabase.ref('visitors/' + visitorInformation.identificationVisitor).set({
+    name: visitorInformation.nameVisitor,
+    lastName: visitorInformation.lastNameVisitor,
+    identification: visitorInformation.identificationVisitor,
+    visitOf: {
+      ofice: visitorInformation.visitOf.ofice,
+      nameVisited: visitorInformation.visitOf.nameVisited,
+    },
+    active: true
+  }).then(() => {
+    referenceDatabase.ref('visitors/' + visitorInformation.identificationVisitor).once('value', (snapshot) => {
+      const isActive = snapshot.val().active;
+      if (isActive) {
+        console.log('firebase');
+      }
+    });
   });
-  currentimg.setAttribute('src', img);
 };
+// const refPicturesBd = firebase.database().ref('pictures');
 /* *********************************************borra fotos**********************/
-const remove = (keyImagen) => {
-  refPicturesBd.child(keyImagen).remove();
-};
+// const remove = (keyImagen) => {
+//   refPicturesBd.child(keyImagen).remove();
+// };
 
 /* **************************************Muestra fotos*********************************************************/
 /* refPicturesBd.on('value', (snapshot) => {
@@ -50,4 +121,3 @@ const remove = (keyImagen) => {
     }
   });
 }); */
-
