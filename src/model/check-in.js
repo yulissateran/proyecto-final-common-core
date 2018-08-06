@@ -20,9 +20,10 @@ window.visitorInformation = {
     ofice: null,
     nameVisited: null
   }
+
 };
 
-window.validateFormVisitor = (valuesFormVisitor, visitorInformation) =>{
+window.validateFormVisitor = (valuesFormVisitor, visitorInformation) => {
   console.log(window.visitorInformation);
   valuesFormVisitor.messageErrorName.innerHTML = '';
   valuesFormVisitor.messageErrorLastName.innerHTML = '';
@@ -31,7 +32,7 @@ window.validateFormVisitor = (valuesFormVisitor, visitorInformation) =>{
   const lastNameValidation = window.validatorName(valuesFormVisitor.lastName);
   const identificationValidation = window.validatorIdentification(valuesFormVisitor.identification);
 
-  if (nameValidation && lastNameValidation && identificationValidation) { 
+  if (nameValidation && lastNameValidation && identificationValidation) {
     window.writeDataVisitorInObject(valuesFormVisitor, visitorInformation);
     document.getElementById('registerContainer').style.display = 'none';
     document.getElementById('photoRegisterContainer').style.display = 'inherit';
@@ -48,7 +49,7 @@ window.validateFormVisitor = (valuesFormVisitor, visitorInformation) =>{
   }
 };
 
-window.writeDataVisitorInObject = ( valuesFormVisitor, visitorInformation)=>{
+window.writeDataVisitorInObject = (valuesFormVisitor, visitorInformation) => {
   console.log(window.visitorInformation);
   visitorInformation.nameVisitor = valuesFormVisitor.name;
   visitorInformation.lastNameVisitor = valuesFormVisitor.lastName;
@@ -61,11 +62,11 @@ window.writeDataVisitorInObject = ( valuesFormVisitor, visitorInformation)=>{
 };
 
 /* ***************************************************Acceso a la cámara***************************************************************/
-window.accessTheCamera = (camera)=>{
+window.accessTheCamera = (camera) => {
   console.log(window.visitorInformation);
-  navigator.mediaDevices.getUserMedia({ 
-    audio: false, 
-    video: true 
+  navigator.mediaDevices.getUserMedia({
+    audio: false,
+    video: true
   }).then((stream) => {
     camera.srcObject = stream;
     camera.onloadedmetadata = () => camera.play();
@@ -84,42 +85,94 @@ window.takePicture = (currentImg, canvas, camera, visitorInformation) => {
   return img;
 };
 /* *************************************Escribe datos en firebase*********************************************+ */
+const newDate = () => {
+  const date = new Date();
+  const mounthVisitor = date.getMonth() + 1;
+  const dateVisitor = `
+          ${date.getFullYear()}/
+          ${mounthVisitor}/
+          ${date.getDate()} 
+          ${date.getHours()}:
+          ${date.getMinutes()}:
+          ${+ date.getSeconds()}`;
+  return dateVisitor;
+};
+
 window.registerVisitorInFirebase = (referenceDatabase, visitorInformation) => {
   console.log(window.visitorInformation);
-  referenceDatabase.ref('visitors/' + visitorInformation.identificationVisitor).set({
-    name: visitorInformation.nameVisitor,
-    lastName: visitorInformation.lastNameVisitor,
-    identification: visitorInformation.identificationVisitor,
-    visitOf: {
-      ofice: visitorInformation.visitOf.ofice,
-      nameVisited: visitorInformation.visitOf.nameVisited,
-    },
-    active: true
-  }).then(() => {
-    referenceDatabase.ref('visitors/' + visitorInformation.identificationVisitor).once('value', (snapshot) => {
-      const isActive = snapshot.val().active;
-      if (isActive) {
-        console.log('firebase');
+  referenceDatabase.ref('visitors/').once('value', (snapshot) => {
+    snapshot.val().forEach(element => {
+      if (element === window.visitorInformation.identificationVisitor) {
+        console.log('ya estas registrado');
+      } else {
+        referenceDatabase.ref('visitors/' + visitorInformation.identificationVisitor).set({
+          name: visitorInformation.nameVisitor,
+          lastName: visitorInformation.lastNameVisitor,
+        }).then(() => {
+          referenceDatabase.ref('visitors/' + visitorInformation.identificationVisitor + '/visits').push({
+            ofice: visitorInformation.visitOf.ofice,
+            nameVisited: visitorInformation.visitOf.nameVisited,
+            active: true,
+            photoVisitor: visitorInformation.pictureVisitor,
+            entry: newDate(),
+          });
+        }).then(() => {
+          referenceDatabase.ref('visitors/' + visitorInformation.identificationVisitor).once('value', (snapshot) => {
+            const isActive = snapshot.val().active;
+            if (isActive) {
+              console.log('firebase');
+            }
+          });
+        });
       }
     });
   });
 };
-// const refPicturesBd = firebase.database().ref('pictures');
+window.frequentVisitor = (referenceDatabase, visitorInformation) => {
+  console.log(window.visitorInformation);
+  referenceDatabase.ref('visitors/').once('value', (snapshot) => {
+    snapshot.val().forEach(element => {
+      if (element !== window.visitorInformation.identificationVisitor) {
+        console.log('No estas registrado');
+      } else {
+        referenceDatabase.ref('visitors/' + visitorInformation.identificationVisitor + '/visits').push({
+          ofice: visitorInformation.visitOf.ofice,
+          nameVisited: visitorInformation.visitOf.nameVisited,
+          active: true,
+          photoVisitor: visitorInformation.pictureVisitor,
+          status: 'pending'
+        }).then(() => {
+          referenceDatabase.ref('visitors/' + visitorInformation.identificationVisitor).once('value', (snapshot) => {
+            const isActive = snapshot.val().active;
+            if (isActive) {
+              console.log('firebase');
+            }
+          });
+        });
+      }
+    });
+  });
+};
+
+
+const refPicturesBd = firebase.database().ref('pictures');
 /* *********************************************borra fotos**********************/
 // const remove = (keyImagen) => {
 //   refPicturesBd.child(keyImagen).remove();
 // };
 
 /* **************************************Muestra fotos*********************************************************/
-/* refPicturesBd.on('value', (snapshot) => {
-  document.getElementById('divImagenes').innerHTML = '';
-  snapshot.forEach(element => {
-    if (element.val().url) {
-      document.getElementById('divImagenes').innerHTML += `
-      <div>
-      <img src="${element.val().url}"/><br/>
-      <button id="${element.key}" onclick="remove('${element.key}')">Borrar</button>
-      </div>`;
-    }
-  });
-}); */
+// window.fotos = () =>{
+//   refPicturesBd.on('value', (snapshot) => {
+//     document.getElementById('divImagenes').innerHTML = '';
+//     snapshot.forEach(element => {
+//       if (element.val().url) {
+//         document.getElementById('divImagenes').innerHTML += `
+//         <div>
+//         <img src="${element.val().url}"/><br/>
+//         <button id="${element.key}" onclick="remove('${element.key}')">Borrar</button>
+//         </div>`;
+//       }
+//     });
+//   }); 
+// }
