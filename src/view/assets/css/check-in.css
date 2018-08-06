@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Questrial');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 *{
-  font-family: 'Questrial', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 header{
@@ -37,7 +37,7 @@ p{
 .checkInButtons{
     background: none;
     border:1px solid black;
-    font-size: 1em;
+    font-size: 0.8em;
     width: 30%;
     text-align: center;
     padding-top: 0.5em;

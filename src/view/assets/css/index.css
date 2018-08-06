@@ -1,12 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Questrial');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 *{
-    font-family: 'Questrial', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 header{
     text-align: center;
-    font-size: 1.8em;   
+    font-size: 1.6em;   
     margin-top: 1em; 
 }
 
@@ -20,27 +20,26 @@ img{
 .indexButtons{
     background: none;
     border:1px solid black;
-    font-size: 1.5em;
-    width: 48%;
+    font-size: 1em;
+    width: 55% !important;
     text-align: center;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
 }
 
-#checkoutButton{
-    float: left;
+#registerButton{
+    margin-left: 22%;
 }
 
-#checkinButton{
-    float: right;
-}
+
+
 
 .arrowIcons{
     width: 0.6em;
     margin: 0;
 }
 
-#registerButton{
+#checkoutButton{
     background: none;
     border: none;
     font-size: 1.2em;
@@ -54,7 +53,7 @@ img{
     margin-bottom: 0.5em;
 }
 
-#userIcon{
+#outIcon{
     width: 0.8em;
     margin: 0;
 }
@@ -69,7 +68,7 @@ img{
 @media (min-width: 768px){
       
   header{
-    font-size: 3.7em;   
+    font-size: 3em;   
   }
     
   img{
@@ -80,19 +79,12 @@ img{
 
   .indexButtons{
     margin-top: 1em;
-    font-size: 2.8em;
+    font-size: 2em;
     width: 40%;
   }
 
+
   #checkoutButton{
-    margin-left: 1em;
-  }
-
-  #checkinButton{
-    margin-right: 1em;
-  }
-
-  #registerButton{
     font-size: 2.3em;
   }
     
@@ -102,7 +94,7 @@ img{
 
 @media (min-width: 1024px){
 
-  #registerButton{
+  #checkoutButton{
     position: inherit;
     margin-top: 7em;
   }
