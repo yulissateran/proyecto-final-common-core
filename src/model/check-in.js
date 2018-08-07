@@ -1,47 +1,37 @@
-/* global firebase */
-let config = {
-  apiKey: 'AIzaSyCGQvJrcWt8bQ7wB3A2AXqkHqld-NYAVJw',
-  authDomain: 'social-network-967b3.firebaseapp.com',
-  databaseURL: 'https://social-network-967b3.firebaseio.com',
-  projectId: 'social-network-967b3',
-  storageBucket: 'social-network-967b3.appspot.com',
-  messagingSenderId: '25029310975'
-};
-firebase.initializeApp(config);
+// /* global firebase */
+// let config = {
+//   apiKey: 'AIzaSyCGQvJrcWt8bQ7wB3A2AXqkHqld-NYAVJw',
+//   authDomain: 'social-network-967b3.firebaseapp.com',
+//   databaseURL: 'https://social-network-967b3.firebaseio.com',
+//   projectId: 'social-network-967b3',
+//   storageBucket: 'social-network-967b3.appspot.com',
+//   messagingSenderId: '25029310975'
+// };
+// firebase.initializeApp(config);
+// window.referenceDatabase = firebase.database();
 /* *****************************************************Variables************************************************************************/
-window.referenceDatabase = firebase.database();
+
 
 window.visitorInformation = {
   nameVisitor: null,
-  lastNameVisitor: null,
   identificationVisitor: null,
   pictureVisitor: null,
-  visitOf: {
-    ofice: null,
-    nameVisited: null
-  }
-
 };
 
 window.validateFormVisitor = (valuesFormVisitor, visitorInformation) => {
   console.log(window.visitorInformation);
   valuesFormVisitor.messageErrorName.innerHTML = '';
-  valuesFormVisitor.messageErrorLastName.innerHTML = '';
   valuesFormVisitor.messageErrorIdentification.innerHTML = '';
   const nameValidation = window.validatorName(valuesFormVisitor.name);
-  const lastNameValidation = window.validatorName(valuesFormVisitor.lastName);
   const identificationValidation = window.validatorIdentification(valuesFormVisitor.identification);
 
-  if (nameValidation && lastNameValidation && identificationValidation) {
+  if (nameValidation && identificationValidation) {
     window.writeDataVisitorInObject(valuesFormVisitor, visitorInformation);
     document.getElementById('registerContainer').style.display = 'none';
     document.getElementById('photoRegisterContainer').style.display = 'inherit';
     return true;
   } else if (!nameValidation) {
     valuesFormVisitor.messageErrorName.innerHTML = '<em>Este campo debe tener mas de 7 letras</em>';
-    return false;
-  } else if (!lastNameValidation) {
-    valuesFormVisitor.messageErrorLastName.innerHTML = '<em>Este campo debe tener mas de 7 letras</em>';
     return false;
   } else if (!identificationValidation) {
     valuesFormVisitor.messageErrorIdentification.innerHTML = '<em>Este campo debería tener 8 números</em>';
@@ -52,8 +42,8 @@ window.validateFormVisitor = (valuesFormVisitor, visitorInformation) => {
 window.writeDataVisitorInObject = (valuesFormVisitor, visitorInformation) => {
   console.log(window.visitorInformation);
   visitorInformation.nameVisitor = valuesFormVisitor.name;
-  visitorInformation.lastNameVisitor = valuesFormVisitor.lastName;
   visitorInformation.identificationVisitor = valuesFormVisitor.identification;
+  visitorInformation.company = valuesFormVisitor.company,
   console.log(window.visitorInformation);
   window.accessTheCamera();
   return visitorInformation;
@@ -83,91 +73,51 @@ window.takePicture = (currentImg, canvas, camera, visitorInformation) => {
   return img;
 };
 /* *************************************Escribe datos en firebase*********************************************+ */
-const newDate = () => {
-  const date = new Date();
-  const mounthVisitor = date.getMonth() + 1;
-  const dateVisitor = `
-          ${date.getFullYear()}/
-          ${mounthVisitor}/
-          ${date.getDate()} 
-          ${date.getHours()}:
-          ${date.getMinutes()}:
-          ${+ date.getSeconds()}`;
-  return dateVisitor;
-};
 
-window.registerVisitorInFirebase = (referenceDatabase, visitorInformation) => {
+
+window.registerVisitorInFirebase = (referenceDatabase, visitorInformation, newDate) => {
   console.log(window.visitorInformation);
-  referenceDatabase.ref('visitors/').once('value', (snapshot) => {
-    snapshot.val().forEach(element => {
-      if (element === window.visitorInformation.identificationVisitor) {
-        console.log('ya estas registrado');
-      } else {
-        referenceDatabase.ref('visitors/' + visitorInformation.identificationVisitor).set({
-          name: visitorInformation.nameVisitor,
-          lastName: visitorInformation.lastNameVisitor,
-        }).then(() => {
-          referenceDatabase.ref('visitors/' + visitorInformation.identificationVisitor + '/visits').push({
-            ofice: visitorInformation.visitOf.ofice,
-            nameVisited: visitorInformation.visitOf.nameVisited,
-            active: true,
-            photoVisitor: visitorInformation.pictureVisitor,
-            entry: newDate(),
-          });
-        }).then(() => {
-          referenceDatabase.ref('visitors/' + visitorInformation.identificationVisitor).once('value', (snapshot) => {
-            const isActive = snapshot.val().active;
-            if (isActive) {
-              console.log('firebase');
-            }
-          });
-        });
-      }
-    });
-  });
-};
-window.frequentVisitor = (referenceDatabase, visitorInformation) => {
-  referenceDatabase.ref('visitors/').once('value', (snapshot) => {
-    snapshot.val().forEach(element => {
-      if (element !== window.visitorInformation.identificationVisitor) {
-        console.log('No estas registrado');
-      } else {
-        referenceDatabase.ref('visitors/' + visitorInformation.identificationVisitor + '/visits').push({
-          ofice: visitorInformation.visitOf.ofice,
-          nameVisited: visitorInformation.visitOf.nameVisited,
-          active: true,
-          photoVisitor: visitorInformation.pictureVisitor,
-          status: 'pending'
-        }).then(() => {
-          referenceDatabase.ref('visitors/' + visitorInformation.identificationVisitor).once('value', (snapshot) => {
-            const isActive = snapshot.val().active;
-            if (isActive) {
-              console.log('firebase');
-            }
-          });
-        });
+  referenceDatabase.ref('visitors/' + visitorInformation.identificationVisitor).update({
+    name: visitorInformation.nameVisitor,
+    company: visitorInformation.company,
+    picture: visitorInformation.pictureVisitor,
+    dateRegister: newDate()
+  }).then(() => {
+    referenceDatabase.ref('visitors/' + visitorInformation.identificationVisitor).once('value', (snapshot) => {
+      const savedName = snapshot.val().name;
+      if (savedName) {
+        console.log('firebase');
       }
     });
   });
 };
 
-const showRegisterVisitstoTheAdministrator = (containerVisits) => {
-  referenceDatabase.ref('visitors/').on('value', (snapshot) => {
-    snapshot.val().forEach(element => {  
-      
-      containerVisits.innerHTML += `
-    <div>
-      <div><img src="${element.pictureVisitor}"/></div>
-      <span>${element.nameVisitor} ${element.lastNameVisitor}</span>
-      <ul>
-        <li>${element.identificationVisitor}</li>
-        <li>${element}<</li>
-        <li>${element}</li>
-      </ul>
-    </div>`;
-    });
-  });
-}
+// window.frequentVisitor = (referenceDatabase, visitorInformation) => {
+//   referenceDatabase.ref('visitors/').once('value', (snapshot) => {
+//     snapshot.val().forEach(element => {
+//       if (element !== window.visitorInformation.identificationVisitor) {
+//         console.log('No estas registrado');
+//       } else {
+//         referenceDatabase.ref('visitors/' + visitorInformation.identificationVisitor + '/visits').push({
+//           ofice: visitorInformation.visitOf.ofice,
+//           nameVisited: visitorInformation.visitOf.nameVisited,
+//           active: true,
+//           photoVisitor: visitorInformation.pictureVisitor,
+//           status: 'pending'
+//         }).then(() => {
+//           referenceDatabase.ref('visitors/' + visitorInformation.identificationVisitor).once('value', (snapshot) => {
+//             const isActive = snapshot.val().active;
+//             if (isActive) {
+//               console.log('firebase');
+//             }
+//           });
+//         });
+//       }
+//     });
+//   });
+// };
+
+
 // const refPicturesBd = firebase.database().ref('pictures');
 /* *********************************************borra fotos**********************/
 // const remove = (keyImagen) => {

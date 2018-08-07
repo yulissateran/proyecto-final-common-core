@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>REGISTRO DE VISITANTES</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="assets/css/visited.css" />
+    
+</head>
+<body>
+  <header>
+    <div id="titleContainer">
+      <img src="assets/img/comunal-logo-yellow.png" alt="logo comunal">
+      <h1>REGISTRO DE VISITANTES</h1>
+    </div>
+    <p id="administratorName">Bienvenido, Diego</p>
+  </header>
+
+  <div id="infoContainer">
+    <button id="register">REGISTRAR VISITA</button>
+    <div id="searchAndDate">
+      <div class="search">
+        <input type="search" name="buscador" id="searchInput" placeholder="Buscar">
+        <button class="searchButton" id="searchBy"><img src="assets/img/search.png" alt="search icon" class="searchIcon"></button>
+      </div>
+    </div>
+    <div id="date"></div>
+  </div>
+
+  <div id="infoModal">
+    <div id="modalContent">
+      <img id="closeButton" src="assets/img/cancel.png" alt="cancel button">
+      <div id="registerVisitContent">
+        <div class="inputContainer">
+          <label for="identification">DOCUMENTO DE IDENTIDAD</label>
+          <input type="text"  id="identification">
+        </div>
+        <div class="visited">
+          <p>OFICINA VISITADA</p>
+          <select name="comunal offices" id="comunalOffices">
+            <option value="comunal" selected>Comunal</option>
+            <option value="laboratoria">Laboratoria</option>
+          </select>
+        </div>
+        <div class="visited">
+          <p>ANFITRIÓN</p>
+          <select name="employees" id="employees">
+            <option value="Alejandra" selected>Alejandra</option>
+            <option value="Bea">Bea</option>
+            <option value="Gonzalo">Gonzalo</option>
+            <option value="Ruth">Ruth</option>
+          </select>
+        </div>
+        <button id="saveVisit">GUARDAR</button>
+      </div>
+    </div> 
+  </div>
+  <section id="containerVisits"></section>
+  <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+    <script src="../model/firebase.js"></script>
+    <script src="../model/visited.js"></script>
+    <script src="../controller/visited.js"></script>
+</body>
+</html>
