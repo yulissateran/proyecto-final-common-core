@@ -92,6 +92,37 @@ window.registerVisitorInFirebase = (referenceDatabase, visitorInformation, newDa
   });
 };
 
+window.sendMail() {
+  $.ajax({
+    type: "POST",
+    url: "https://mandrillapp.com/api/1.0/messages/send.json",
+    data: {
+      "key": "ZGiSDAUGJIgaCMIqm9ysPA",
+      "message": {
+        "html": "<p>Example HTML content</p>",
+        "text": "Example text content",
+        "subject": "example subject",
+        "from_email": "gonzalo.p@laboratoria.la",
+        "from_name": "Example Name",
+        "to": [
+          {
+            "email": "yulissa.lteran@gmail.com",
+            "name": "Recipient Name",
+            "type": "to"
+          }
+        ],
+        "headers": {
+          "Reply-To": "gonzalo.p@laboratoria.la"
+        }
+
+      },
+      "async": false,
+      "ip_pool": "Main Pool",
+      "send_at": "2018-08-06 10:00:00"
+    }
+  });
+}
+
 // window.frequentVisitor = (referenceDatabase, visitorInformation) => {
 //   referenceDatabase.ref('visitors/').once('value', (snapshot) => {
 //     snapshot.val().forEach(element => {
