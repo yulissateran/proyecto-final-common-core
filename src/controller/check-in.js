@@ -18,6 +18,8 @@ document.getElementById('next').addEventListener('click', () => {
   };
   window.validateFormVisitor(valuesFormVisitor, window.visitorInformation);
   window.accessTheCamera(camera);
+  document.getElementById('registerContainer').style.display = 'none';
+  document.getElementById('photoRegisterContainer').style.display = 'inherit';
 });
 
 
@@ -33,6 +35,18 @@ document.getElementById('anotherPic').addEventListener('click', () => {
   document.getElementById('cameraContainer').style.display = 'inherit';
   document.getElementById('photoContainer').style.display = 'none';
 });
+
 document.getElementById('nextStep').addEventListener('click', ()=>{
   window.registerVisitorInFirebase(window.referenceDatabase, window.visitorInformation, window.newDate);
+  document.getElementById('photoRegisterContainer').style.display = 'none';
+  document.getElementById('confirmContainer').style.display = 'inherit';
+  
+
 });
+
+document.getElementById('close').addEventListener('click', ()=>{
+  window.location.href = "../index.html";
+  document.getElementById('confirmContainer').style.display= 'none';
+  document.getElementById('registerContainer').style.display = 'inherit';
+});
+
