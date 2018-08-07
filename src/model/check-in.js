@@ -25,22 +25,17 @@ window.visitorInformation = {
 window.validateFormVisitor = (valuesFormVisitor, visitorInformation) =>{
   console.log(window.visitorInformation);
   valuesFormVisitor.messageErrorName.innerHTML = '';
-  valuesFormVisitor.messageErrorLastName.innerHTML = '';
   valuesFormVisitor.messageErrorIdentification.innerHTML = '';
   const nameValidation = window.validatorName(valuesFormVisitor.name);
-  const lastNameValidation = window.validatorName(valuesFormVisitor.lastName);
   const identificationValidation = window.validatorIdentification(valuesFormVisitor.identification);
 
-  if (nameValidation && lastNameValidation && identificationValidation) { 
+  if (nameValidation && identificationValidation) { 
     window.writeDataVisitorInObject(valuesFormVisitor, visitorInformation);
     document.getElementById('registerContainer').style.display = 'none';
     document.getElementById('photoRegisterContainer').style.display = 'inherit';
     return true;
   } else if (!nameValidation) {
     valuesFormVisitor.messageErrorName.innerHTML = '<em>Este campo debe tener mas de 7 letras</em>';
-    return false;
-  } else if (!lastNameValidation) {
-    valuesFormVisitor.messageErrorLastName.innerHTML = '<em>Este campo debe tener mas de 7 letras</em>';
     return false;
   } else if (!identificationValidation) {
     valuesFormVisitor.messageErrorIdentification.innerHTML = '<em>Este campo debería tener 8 números</em>';
@@ -51,10 +46,7 @@ window.validateFormVisitor = (valuesFormVisitor, visitorInformation) =>{
 window.writeDataVisitorInObject = ( valuesFormVisitor, visitorInformation)=>{
   console.log(window.visitorInformation);
   visitorInformation.nameVisitor = valuesFormVisitor.name;
-  visitorInformation.lastNameVisitor = valuesFormVisitor.lastName;
   visitorInformation.identificationVisitor = valuesFormVisitor.identification;
-  visitorInformation.visitOf.ofice = valuesFormVisitor.visitOf.ofice;
-  visitorInformation.visitOf.nameVisited = valuesFormVisitor.visitOf.employe;
   console.log(window.visitorInformation);
   window.accessTheCamera();
   return visitorInformation;
@@ -88,12 +80,7 @@ window.registerVisitorInFirebase = (referenceDatabase, visitorInformation) => {
   console.log(window.visitorInformation);
   referenceDatabase.ref('visitors/' + visitorInformation.identificationVisitor).set({
     name: visitorInformation.nameVisitor,
-    lastName: visitorInformation.lastNameVisitor,
     identification: visitorInformation.identificationVisitor,
-    visitOf: {
-      ofice: visitorInformation.visitOf.ofice,
-      nameVisited: visitorInformation.visitOf.nameVisited,
-    },
     active: true
   }).then(() => {
     referenceDatabase.ref('visitors/' + visitorInformation.identificationVisitor).once('value', (snapshot) => {
