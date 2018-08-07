@@ -54,8 +54,6 @@ window.writeDataVisitorInObject = (valuesFormVisitor, visitorInformation) => {
   visitorInformation.nameVisitor = valuesFormVisitor.name;
   visitorInformation.lastNameVisitor = valuesFormVisitor.lastName;
   visitorInformation.identificationVisitor = valuesFormVisitor.identification;
-  visitorInformation.visitOf.ofice = valuesFormVisitor.visitOf.ofice;
-  visitorInformation.visitOf.nameVisited = valuesFormVisitor.visitOf.employe;
   console.log(window.visitorInformation);
   window.accessTheCamera();
   return visitorInformation;
@@ -129,7 +127,6 @@ window.registerVisitorInFirebase = (referenceDatabase, visitorInformation) => {
   });
 };
 window.frequentVisitor = (referenceDatabase, visitorInformation) => {
-  console.log(window.visitorInformation);
   referenceDatabase.ref('visitors/').once('value', (snapshot) => {
     snapshot.val().forEach(element => {
       if (element !== window.visitorInformation.identificationVisitor) {
@@ -154,8 +151,24 @@ window.frequentVisitor = (referenceDatabase, visitorInformation) => {
   });
 };
 
-
-const refPicturesBd = firebase.database().ref('pictures');
+const showRegisterVisitstoTheAdministrator = (containerVisits) => {
+  referenceDatabase.ref('visitors/').on('value', (snapshot) => {
+    snapshot.val().forEach(element => {  
+      
+      containerVisits.innerHTML += `
+    <div>
+      <div><img src="${element.pictureVisitor}"/></div>
+      <span>${element.nameVisitor} ${element.lastNameVisitor}</span>
+      <ul>
+        <li>${element.identificationVisitor}</li>
+        <li>${element}<</li>
+        <li>${element}</li>
+      </ul>
+    </div>`;
+    });
+  });
+}
+// const refPicturesBd = firebase.database().ref('pictures');
 /* *********************************************borra fotos**********************/
 // const remove = (keyImagen) => {
 //   refPicturesBd.child(keyImagen).remove();
@@ -164,7 +177,7 @@ const refPicturesBd = firebase.database().ref('pictures');
 /* **************************************Muestra fotos*********************************************************/
 // window.fotos = () =>{
 //   refPicturesBd.on('value', (snapshot) => {
-//     document.getElementById('divImagenes').innerHTML = '';
+//     document.getElementById('divImagenes').innerHTML = '';;
 //     snapshot.forEach(element => {
 //       if (element.val().url) {
 //         document.getElementById('divImagenes').innerHTML += `
