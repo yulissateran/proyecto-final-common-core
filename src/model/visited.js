@@ -29,7 +29,8 @@ window.writeDataAjax = (infoVisit)=>{
     key:'ZGiSDAUGJIgaCMIqm9ysPA',
     message: {
       html: `<div>
-              <span>Hola! ${infoVisit.visited} , ${infoVisit.nameVisitor} quiere visitarte hoy</span></div>Example HTML content`,
+              <span>Hola! ${infoVisit.visited} , ${infoVisit.nameVisitor} quiere visitarte hoy
+              comunicate con nosotros para confirmar su ingreso :) </span></div>`,
       'text': 'contactate con nosotros: 456765',
       'subject': 'tienes una visita nueva',
       'from_email': 'yuli@laboratoria.la',
@@ -63,8 +64,9 @@ window.sendEmail = (data) => {
 
 
 window.showDashboardAdmin = (containerVisits) => {
-  containerVisits.innerHTML = '';
+  
   window.referenceDatabase.ref('visitors/').on('value', (snapshot) => {
+    containerVisits.innerHTML = '';
     snapshot.forEach(element => { 
       containerVisits.innerHTML += `
     <div>

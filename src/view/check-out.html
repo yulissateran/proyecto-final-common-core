@@ -9,13 +9,35 @@
     
 </head>
 <body>
-  <h1>Registrar salida</h1>
-  <h2>DNI</h2>
-  <input type="text">
-  <button id="back">VOLVER</button>
-  <button>ENVIAR</button>
-    
+  <div id="visitOut">
+    <h1>Registrar salida</h1>
+    <div id="inputContainer">
+      <h2>DNI</h2>
+      <input type="text" id="dniOut">
+    </div>
+    <div id="buttonsContainer">
+      <button class="checkInButtons" id="back"> <img class="arrowIcons" src="assets/img/back.png"> VOLVER</button>
+      <button class="checkInButtons" id="send">ENVIAR <img class="arrowIcons" src="assets/img/right-arrow.png" alt="right icon"></button>
+    </div>
+  </div>
 
+  <div id="confirmContainer">
+      <h1>Gracias por su visita</h1>
+      <div id="checkContainer">
+        <img src="assets/img/check.png" alt="check notification" id="check">
+        <p id="confirmMessage">Salida registrada</p>
+      </div>
+      <button id="close">Cerrar</button>
+  </div>
+
+  <div id="logoContainer">
+    <img src="assets/img/comunal-logo.png" alt="logo comunal">
+  </div>
+  
+
+  <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+  <script src="../model/firebase.js"></script>
   <script src="../controller/check-out.js"></script>
+  <script src="../model/check-out.js"></script>
 </body>
 </html>

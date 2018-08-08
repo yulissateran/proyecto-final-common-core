@@ -9,6 +9,7 @@ document.getElementById('register').addEventListener('click', () => {
 document.getElementById('closeButton').addEventListener('click', () => {
   document.getElementById('infoModal').style.display = 'none';
 });
+
 document.addEventListener('DOMContentLoaded', window.showDashboardAdmin(document.getElementById('containerVisits')));
 document.getElementById('saveVisit').addEventListener('click', () => {
   window.infoVisit = {
@@ -20,5 +21,5 @@ document.getElementById('saveVisit').addEventListener('click', () => {
   setTimeout(() => {
     const dataEmail = window.writeDataAjax(window.infoVisit);
     window.sendEmail(dataEmail);
-  }, 3000);
+  }, 4000);
 });
