@@ -27,10 +27,10 @@ Comunal es una empresa de coworking que ofrece diferentes opciones de espacios p
 ### Benchmarking
 Realizamos la investigación de 03 lugares en particular que cuentan con buenas prácticas en registro de visitantes y nos pueden dar un mayor acercamiento al objetivo y uso de herramientas digitales para el registro de visitantes.
 
-| Organización                | Proceso de registro | Requisitos solicitados | Tiempo empleado |
-|-------------                | ------------------- | ---------------------- | --------------- |
-| **PUCP**                  | 
-| Tipo: Institución educativa peruana. |
+| Organización | Proceso de registro | Requisitos solicitados | Tiempo empleado |
+|------------- | ------------------- | ---------------------- | --------------- |
+| **PUCP** | Registro virtual: cuando un invitado visitará la sede de la PUCP, debe enviar sus datos para que el anfitrión lo registre con anticipación. |
+| Tipo: Institución educativa peruana. | Registro presencial: el invitado puede ingresar sin haberse registrado previamente solo si se encuentra acompañado por un estudiante o trabajador de la PUCP. |
 | Cuenta con un registro de visitantes virtual y presencial. |
 | Destaca por la seguridad en el proceso de registro. |
 |------ |
