@@ -29,8 +29,36 @@ Realizamos la investigación de 03 lugares en particular que cuentan con buenas 
 
 | Organización | Proceso de registro | Requisitos solicitados | Tiempo empleado |
 |------------- | ------------------- | ---------------------- | --------------- |
-| **PUCP** | Registro virtual: cuando un invitado visitará la sede de la PUCP, debe enviar sus datos para que el anfitrión lo registre con anticipación. |
-| Tipo: Institución educativa peruana. | Registro presencial: el invitado puede ingresar sin haberse registrado previamente solo si se encuentra acompañado por un estudiante o trabajador de la PUCP. |
-| Cuenta con un registro de visitantes virtual y presencial. |
-| Destaca por la seguridad en el proceso de registro. |
-|------ |
+| **PUCP** 
+Tipo: Institución educativa peruana. 
+Cuenta con un registro de visitantes virtual y presencial. 
+Destaca por la seguridad en el proceso de registro. | Registro virtual: cuando un invitado visitará la sede de la PUCP, debe enviar sus datos para que el anfitrión lo registre con anticipación. 
+Registro presencial: el invitado puede ingresar sin haberse registrado previamente solo si se encuentra acompañado por un estudiante o trabajador de la PUCP. | Registro virtual:
+- Nombre completo.
+- DNI
+- Facultad que visita
+- Motivo de visita
+Cuando se acerca a registrar su llegada, debe dejar su DNI en recepción para poder ingresar.
+Registro presencial: se solicita el DNI para el ingreso de manera obligatoria, sin embargo, no se queda en recepción ni se intercambia por un pase o fotocheck. | El registro dura aproximadamente 4’’, no incluye el tiempo de espera. |
+| --- | --- | --- | --- |
+| Centro empresarial El Reducto:
+Tipo: complejo de oficinas.
+Destaca por la seguridad del registro. | Se realiza el registro en la recepción con los datos y se debe dejar DNI del visitante. El DNI se intercambia por un carné que permite identificar al visitante y a la vez poder abrir el acceso a los ascensores. | - Nombre completo.
+- DNI.
+- Oficina a la que se dirige. | El registro dura aproximadamente 5’’. No incluye el tiempo de espera. |
+| --- | --- | --- | --- |
+| Envoy
+Tipo: Compañía de software norteamericana.
+Implementa y produce softwares de registro a diversas organizaciones. Destaca por crear experiencias de usuarios satisfactorias en el uso de sus softwares. | Registro virtual de visitantes a través de un aplicativo en Tablet o IPad. El visitante ingresa sus datos a través de inputs que contienen nombre completo, correo electrónico, compañía, persona a la que visita y el motivo de la visita. Luego se identifica con una fotografía (opcional según la compañía que contrate este servicio), y cuando termina de registrar sus datos, la aplicación envía una notificación al anfitrión indicándole que su invitado ha llegado. | - Nombre completo.
+- Correo electrónico.
+- Compañía
+- Anfitrión
+- Motivo de visita
+- Fotografía | El registro dura aproximadamente 3’’. No incluye el tiempo de espera. |
+| --- | --- | --- | --- |
+
+
+
+
+
+ 
