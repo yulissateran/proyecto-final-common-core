@@ -25,7 +25,7 @@ window.validateFormVisitor = (valuesFormVisitor, visitorInformation) => {
   const nameValidation = window.validatorName(valuesFormVisitor.name);
   const identificationValidation = window.validatorIdentification(valuesFormVisitor.identification);
 
-  if (nameValidation && identificationValidation) {
+  if (nameValidation && identificationValidation) { 
     window.writeDataVisitorInObject(valuesFormVisitor, visitorInformation);
     document.getElementById('registerContainer').style.display = 'none';
     document.getElementById('photoRegisterContainer').style.display = 'inherit';
@@ -43,7 +43,7 @@ window.writeDataVisitorInObject = (valuesFormVisitor, visitorInformation) => {
   console.log(window.visitorInformation);
   visitorInformation.nameVisitor = valuesFormVisitor.name;
   visitorInformation.identificationVisitor = valuesFormVisitor.identification;
-  visitorInformation.company = valuesFormVisitor.company,
+  visitorInformation.company = valuesFormVisitor.company;
   console.log(window.visitorInformation);
   window.accessTheCamera();
   return visitorInformation;
