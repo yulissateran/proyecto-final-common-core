@@ -1,8 +1,8 @@
 # Registro de visitantes para Comunal
-## Introducción
+## 1. Introducción
 La empresa de coworking donde opera Laboratoria nos solicitó reinventar su proceso de registro de visitantes actual con el objetivo de mejorar su servicio y mantenerse competitivos con respecto a otras empresas del mismo rubro. Para ello, aplicamos técnicas de research con el objetivo de recabar información y entregar una propuesta que coincida con sus objetivos de empresa y valores de marca.
 
-## Proceso de planeamiento
+## 2. Proceso de planeamiento
 Para iniciar el planeamiento nos organizamos como equipo utilizando el método Kanban.
 ![Kanban](img/kanban-github.png)
 
@@ -10,21 +10,21 @@ Asimismo, como equipo nos organizamos en áreas de trabajo según lo siguiente:
 * 01 Diseñadora UX, quien se encargó de diseñar la experiencia de la aplicación (flujo, interacción, etc.), así como identificar, documentar y priorizar las historias de usuario para plasmarlos en el  diseño visual de la interfaz.
 * 02 Desarrolladoras Front-end, quienes debían implementar la interfaz de usuario diseñada (HTML/CSS/JS) y las pruebas unitarias.
 
-## Proceso de investigación
-### Lineamientos del cliente
+## 3. Proceso de investigación
+### 3.1 Lineamientos del cliente
 Comunal es una empresa de coworking que ofrece diferentes opciones de espacios para todo tipo de empresas. Desde oficinas privadas para 200 personas, espacios Flex para nuevos emprendimientos, hasta Escritorios Dedicados para pequeñas empresas o equipos pequeños de emprendedores. Tiene una cultura organizacional que lo distingue de otras empresas de coworking pues prima el trato familiar y amical, llamándose a cada miembro de las oficinas "comuneros".
 
-### Benchmarking
+### 3.2 Benchmarking
 Realizamos la investigación de 03 lugares en particular que cuentan con buenas prácticas en registro de visitantes y nos pueden dar un mayor acercamiento al objetivo y uso de herramientas digitales para el registro de visitantes.
 
 ![benchmarking-table](img/benchmarking.png)
 
-### Análisis de competencia
+### 3.3 Análisis de competencia
 Identificamos como competencia directa a la empresa WeWork, empresa de coworking internacional con varias sedes en el país, quien en la actualidad cuenta con un registro virtual de visitantes. En sus sedes en el extranjero, cuentan con un registro anticipado de visitantes a través de una aplicación. Este registro debe hacerlo previamente el anfitrión, ingresando los datos y fotografía del invitado y subiendola a la app.
 
 En sus sedes en el país, sus sistemas de registro varían entre el sistema electrónico a través de tablets y el sistema tradicional, donde el recepcionista toma los datos del visitado en una tabla.
 
-### Entrevistas
+### 3.4 Entrevistas
 Se plantearon 03 tipos de entrevistas: 01 al cliente, en este caso, la empresa de coworking Comunal, 01 a un encargado de registro de un edificio, y 01 a usuarios que suelen visitar empresas y utilizar diferentes sistemas de registros. A continuación el listado de preguntas que se realizaron a cada tipo de usuarios:
 
 **Guía de preguntas - Cliente**
@@ -114,7 +114,7 @@ _5.	¿Has visitado empresas con registro de visitantes virtual? Es decir, donde 
 
  
 
-### Usuarios identificados
+### 3.5 Usuarios identificados
 Se identificaron 03 tipos de usuarios: visitante, visitado y administrador/recepcionista de Comunal, para los cuales se realizaron las siguientes **Historias de Usuario**:
 
 1. Yo, como nuevo visitante en Comunal, quiero poder registrarme en esta aplicación para poder ingresar a las instalaciones de forma rápida y sencilla.
@@ -124,12 +124,55 @@ Se identificaron 03 tipos de usuarios: visitante, visitado y administrador/recep
 5. Yo, como administrador de Comunal, quiero poder visualizar los datos, foto, hora de ingreso y salida del nuevo visitante en mi interfaz.
 6. Yo, como visitante, deseo poder registrar mi salida de las instalaciones de Comunal.
 
-### Principales problemas a resolver según usuarios identificados
+### 3.6 Principales problemas a resolver según usuarios identificados
 1. El cliente (administrador/recepcionista de Comunal) no cuenta con un sistema de registro centralizado que le entregue datos que pueda analizar ni usar en un futuro para sus objetivos comerciales y de seguridad.
 2. El visitante debe pasar por dos filtros de seguridad para poder llegar a su destino, lo cual genera molestias y uso del doble del tiempo de registro y espera.
 3. La persona visitada debe esperar a recibir el mensaje en WhatsApp o llamada por teléfono para poder enterarse de que sus invitados han llegado.
 
-### Conclusiones
+## 4. Conclusiones de investigación
 Siguiendo las necesidades del cliente y los lineamientos de su cultura organizacional, consideramos que es importante implementar un sistema de registro que involucre en gran medida el contacto humano y la familiaridad del recepcionista. 
  
 Para esto, planteamos dos interfaces: una que le permita al usuario registrar sus datos por si solo y otra que le permita al recepcionista registrar a quién viene a visitar el usuario y guardar la hora de ingreso. De esta manera estaríamos integrando tecnología con el trato humano que tan importante es para el cliente.
+
+## 5. Propuesta de aplicación
+Para cumplir con las necesidades del usuario se propuso crear una aplicación que le permita ahorrar tiempo en el ingreso a las instalaciones de Comunal, mantener el calor humano en el trato entre Comunal-Visitante y aumentar los niveles de seguridad necesarios en un sistema de registro de visitantes.
+
+**Diseño de interfaz**
+Se propuso una interfaz sencilla, limpia e intuitiva, con pocos botones e información simplificada, de tal manera que sugiera que el proceso de registro es sencillo y rápido.
+
+### 5.1 Prototipado
+#### Prototipado de baja fidelidad
+Se realizó un prototipado de baja fidelidad, el cual sirvió para realizar el primer testeo. Asimismo, se tomó como modelo para realizar el protitipado de alta fidelidad. El modelo propuesto está diseñado para usarse en pantallas tipo tablet o IPad, con un tamaño de 9,7'' como mínimo.*
+
+![prototipo-baja](img/prototipo-baja.png)
+
+#### Prototipo de alta fidelidad
+Luego del proceso de investigación, diseñamos el primero prototipo de alta fidelidad, el cual nos sirvió como modelo para el maquetado principal y para realizar diferentes testing con posibles usuarios.
+
+[Vista usuario visitante](https://www.figma.com/proto/SNAieaWmj6UB2t6pnGnbbZV2/Register-Comunal?node-id=1%3A2&scaling=scale-down)
+![prototipo-alta-usuario](img/interfaz-tablet.png)
+
+Flujo de interfaz:
+A continuación describimos el flujo de la primera interfaz planteada, la cual se encontrará posicionada en el primer registro del edificio. Se usará solo para visitas a oficinas de Comunal.
+1. Pantalla de bienvenida: el visitante podrá escoger la opción "Primera visita". 
+2. Vistas 2 a 6: el visitante ingresará sus datos y se tomará la foto necesaria para registrar sus datos en la base de visitantes de Comunal.
+3. Vista 7: el visitante podrá verificar si sus datos se encuentran redactados correctamente y enviar su registro.
+4. Vistas 9 al 10: se observa la opción de "registrar salida", en donde el visitante podrá registrar su salida de las instalaciones de Comunal, y se podrá guardar el horario de salida del mismo. 
+
+[Vista administrador/recepcionista Comunal](https://www.figma.com/proto/SNAieaWmj6UB2t6pnGnbbZV2/Register-Comunal?node-id=119%3A116&scaling=scale-down)
+![prototipo-alta-usuario](img/interfaz-admin.png)
+![prototipo-alta-usuario](img/interfaz-admin-users.png)
+
+Flujo de interfaz:
+A continuación se describe el flujo de la segunda interfaz planteada, la cual solo podrá ser vista por el administrador/recepcionista de Comunal. Esta interfaz si está diseñada para desktop.
+1. Pantalla de registro de usuario: el administrador podrá realizar el registro del usuario visitante a través de un modal, en el cual se podrá colocar el DNI del visitante previamente registrado en puerta (vista usuario visitante) e indicar a qué oficina y con quién se van a reunir dentro de Comunal.
+2. Pantalla de visualización de data: el administrador podrá observar los datos del visitante ingresado, y encontrará un buscador e indicador de fecha, para poder filtrar la información.
+
+**Testing con usuarios**
+Se realizó el testing del prototipo con los usuarios visitantes para validar la usabilidad de la aplicación. Se obtuvieron los siguientes resultados:
+- Se comprobó la simplicidad del diseño, puesto que hacía al prototipo muy intuitivo de usar.
+- No se observó dificultados en el ingreso a la aplicación de registro.
+- Se sugirió juntar los inputs "Nombre" y "Apellido" en un solo input.
+- Los colores le fueron agradables y llamaban a la acción.
+
+![testing de usuarios](img/testing-visitor.jpeg)
