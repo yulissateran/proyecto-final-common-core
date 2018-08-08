@@ -18,4 +18,5 @@ document.getElementById('saveVisit').addEventListener('click', ()=>{
     visited: document.getElementById('employees').value,
   };
   window.addVisit(infoVisit, window.newDate);
+  document.getElementById('infoModal').style.display = 'none';
 });

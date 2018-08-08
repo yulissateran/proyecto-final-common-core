@@ -4,10 +4,22 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+#indexContainer{
+    display:none;
+}
+
+#buttonsContainer{
+    margin-top: 20%;
+}
+
 header{
     text-align: center;
     font-size: 1.6em;   
     margin-top: 1em; 
+}
+
+#imagenContainer{
+    width: 100%;
 }
 
 img{
@@ -22,18 +34,15 @@ img{
     background: none;
     border:1px solid black;
     font-size: 1em;
-    width: 55% !important;
+    width: 40% !important;
     text-align: center;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
 }
 
 #registerButton{
-    margin-left: 22%;
+    margin-left: 30%;
 }
-
-
-
 
 .arrowIcons{
     width: 0.6em;
@@ -51,7 +60,7 @@ img{
     bottom: 0;
     left: 0;
     z-index: 1;
-    margin-bottom: 0.5em;
+    margin-bottom: 10%;
 }
 
 #outIcon{
@@ -69,24 +78,30 @@ img{
 @media (min-width: 768px){
       
   header{
-    font-size: 3em;   
+    margin-top: 10%;
+    font-size: 2em;   
+  }
+
+  #imagenContainer{
+    width: 60%;
+    margin-top: 10%;
+    margin-left: 25%;
   }
     
-  img{
+img{
     width: 35%;
-    margin-top: 7em;
-    margin-left: 32.5%;
   }
 
   .indexButtons{
     margin-top: 1em;
-    font-size: 2em;
-    width: 40%;
+    font-size: 1.5em;
+    width: 40% !important;
+    margin-left: 30% !important;
   }
 
 
   #checkoutButton{
-    font-size: 2.3em;
+    font-size: 1.5em;
   }
     
 
@@ -95,9 +110,27 @@ img{
 
 @media (min-width: 1024px){
 
+  header{
+     margin-top: 5%;
+     font-size: 1.5em !important;
+  }
+
   #checkoutButton{
     position: inherit;
     margin-top: 7em;
   }
+
+  #imagenContainer{
+    width: 40%;
+    margin-left: 33%;
+    margin-top: 2em;
+  }
+
+  .indexButtons{
+    width: 20% !important;
+    margin-left: 40% !important;
+    font-size: 1em !important;
+  }
+
 
 }

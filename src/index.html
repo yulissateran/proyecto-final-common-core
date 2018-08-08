@@ -8,13 +8,20 @@
   <link rel="stylesheet" type="text/css" media="screen" href="view/assets/css/index.css" /> 
 </head>
 <body>
-  <header>Te damos la bienvenida</header>
-  <img src="view/assets/img/comunal-logo.png" alt="logo comunal">
-   <button class="indexButtons" id="registerButton"> PRIMERA VISITA <img class="arrowIcons" src="view/assets/img/right-arrow.png" alt="right icon"> </button>
- 
+  <div id="buttonsContainer">
+    <button class="indexButtons" id="adm">Soy administrador</button>
+    <button class="indexButtons" id="visits">Primera visita y registro de salida</button>
+  </div>
 
-   <button id="checkoutButton"><img id="outIcon" src="view/assets/img/export.png" alt="go out icon"> <a>Registrar salida</a></button>
-    
+  <div id="indexContainer">
+    <header>Te damos la bienvenida</header>
+    <div id="imagenContainer">
+      <img src="view/assets/img/comunal-logo.png" alt="logo comunal">
+    </div>
+    <button class="indexButtons" id="registerButton"> PRIMERA VISITA <img class="arrowIcons" src="view/assets/img/right-arrow.png" alt="right icon"> </button>
+    <button id="checkoutButton"><img id="outIcon" src="view/assets/img/export.png" alt="go out icon"> <a>Registrar salida</a></button>     
+  </div>
+  
 
     <script src="controller/index.js"></script>
 </body>
