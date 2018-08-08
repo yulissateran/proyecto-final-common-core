@@ -29,11 +29,8 @@ Realizamos la investigación de 03 lugares en particular que cuentan con buenas 
 
 | Organización                | Proceso de registro | Requisitos solicitados | Tiempo empleado |
 |-------------                | ------------------- | ---------------------- | --------------- |
-| ** PUCP **                  | 
-| Tipo: Institución educativa |
-| peruana.                    |
-| Cuenta con un registro de   |
-| visitantes virtual y        |
-| presencial.                 |
-| Destaca por la seguridad en |
-| el proceso de registro.     |
+| **PUCP**                  | 
+| Tipo: Institución educativa peruana. |
+| Cuenta con un registro de visitantes virtual y presencial. |
+| Destaca por la seguridad en el proceso de registro. |
+|------ |
