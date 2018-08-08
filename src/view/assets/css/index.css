@@ -17,7 +17,6 @@ img{
     margin-left: 25%;
 }
 
-
 .indexButtons{
     background: none;
     border:1px solid black;
@@ -27,13 +26,16 @@ img{
     padding-top: 0.5em;
     padding-bottom: 0.5em;
 }
+.buttonAdminView{
+    background-color: #FBD100;
+    border:1px solid black;
+    margin-right: 0px;
+    font-size: 1em;
+}
 
 #registerButton{
     margin-left: 22%;
 }
-
-
-
 
 .arrowIcons{
     width: 0.6em;
@@ -68,51 +70,98 @@ img{
 
 @media (min-width: 768px){
       
-  header{
-    font-size: 3em;   
-  }
+    header{
+        text-align: center;
+        font-size: 1.6em;   
+        margin-top: 1em; 
+    }
     
-  img{
-    width: 25%;
-    margin-top: 3em;
-    margin-left: 32.5%;
-  }
-
-  .indexButtons{
-    margin-top: 9%;
-    margin-bottom: 70%;
-    font-size: 1em;
-    width: 20%;
-    height: 25px;
-  }
-
-
-  #checkoutButton{
-    font-size: 2.3em;
+    img{
+        width: 40%;
+        margin-top: 3em;
+        margin-bottom: 5em;
+        margin-left: 25%;
+    }
     
-
-    background: none;
-    border: none;
-    font-size: 1.2em;
-    width: 30%;
-    margin-left: 20%;
-    /* position: fixed; */
-    right: 0;
-    bottom: 0;
-    left: 0;
-    /* z-index: 1; */
-    margin-bottom: 0.5em;
-
-  }
     
+    .indexButtons{
+        background: none;
+        border:1px solid black;
+        font-size: 1em;
+        width: 55% !important;
+        text-align: center;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+    }
+    
+    #registerButton{
+        margin-left: 22%;
+    }
+    
+    .arrowIcons{
+        width: 0.6em;
+        margin: 0;
+    }
+    
+    #checkoutButton{
+        background: none;
+        border: none;
+        font-size: 1.2em;
+        width: 60%;
+        margin-left: 20%;
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        margin-bottom: 0.5em;
+    }
+    
+    #outIcon{
+        width: 0.8em;
+        margin: 0;
+    }
+    
+    .indexButtons:hover, focus {
+        background: #FBD100;
+        transition: 0.2s;
+        border: none;
+    }
 
 }
-
-@media (min-width: 1024px){
+@media (min-width: 768px){
+    img{
+        width: 25%;
+        margin-top: 3em;
+        margin-bottom: 5em;
+        margin-left: 25%;
+    }  
+}
+@media (min-width: 1020px){
+    img{
+        width: 20%;
+        margin: auto;
+        margin-top: 3em;
+        margin-bottom: 2em;
+        margin-left: 33%;
+    } 
 
   #checkoutButton{
-    position: inherit;
-    margin-top: 7em;
+    /* position: inherit; */
+    margin-top: 4em;
+    margin-bottom: 2%;
+    margin-right: 15%
   }
+  .indexButtons{
+    /* background: none;
+    border:1px solid black;
+    font-size: 1em; */
+    width: 35% !important;
+    /* margin-right: 10%; */
+    text-align: center;
+    padding-top: 2px;
+    padding-bottom: 5%px;
+    margin-right: 15%
+}
 
 }

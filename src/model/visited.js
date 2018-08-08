@@ -19,17 +19,15 @@ window.searchEmail = (infoVisit, url) => {
   const data = getDataComunal(url).then((response) => {
     const employe = response.filter((element) => element.name === infoVisit.visited);
     infoVisit.emailVisited = employe[0].email;
-    console.log(employe[0].email, infoVisit.emailVisited)
   });
-  console.log(data);
   return data;
 };
 window.writeDataAjax = (infoVisit)=>{
   const data = {
-    key:'ZGiSDAUGJIgaCMIqm9ysPA',
+    key: 'ZGiSDAUGJIgaCMIqm9ysPA',
     message: {
       html: `<div>
-              <span>Hola! ${infoVisit.visited} , ${infoVisit.nameVisitor} quiere visitarte hoy
+              <span>Hola! ${infoVisit.visited} , ${infoVisit.nameVisitor} quiere visitarte hoy,
               comunicate con nosotros para confirmar su ingreso :) </span></div>`,
       'text': 'contactate con nosotros: 456765',
       'subject': 'tienes una visita nueva',
@@ -47,7 +45,6 @@ window.writeDataAjax = (infoVisit)=>{
       }
     }
   };
-  console.log(JSON.stringify(data));
   return JSON.stringify(data);
 };
 
@@ -56,24 +53,21 @@ window.sendEmail = (data) => {
     type: 'POST',
     url: 'https://mandrillapp.com/api/1.0/messages/send.json',
     data
-  })
-    .then((response) => {
-      console.log(response);
-    });
+  });
 };
 
 
 window.showDashboardAdmin = (containerVisits) => {
-  
   window.referenceDatabase.ref('visitors/').on('value', (snapshot) => {
     containerVisits.innerHTML = '';
     snapshot.forEach(element => { 
       containerVisits.innerHTML += `
-    <div>
-      <span>Nombre:${element.val().name}</span>
-      <div><img src="${element.val().picture}"/></div>
+    <div class="divVisit">
+      <div><img class="pictureVisitor" src="${element.val().picture}"/></div>
+      <span class="nameVisitor"><strong>${element.val().name}</strong></span>
       <ul>
-        <li>Identificación${element.key}</li>
+        <li>Identificación: ${element.key}</li>
+        <li>Visitante actual</li>
       </ul>
     </div>`;
     });
@@ -95,11 +89,9 @@ window.addVisit = (infoVisit, newDate, callback, url) => {
     visited: infoVisit.visited
   }).then(() => {
     if (window.referenceDatabase.ref('visitors/' + infoVisit.identificadoractive)) {
-      console.log('agregado a firebase');
       callback(infoVisit, url);
     }
   });
-  
 };
 
 

@@ -20,6 +20,6 @@ document.getElementById('saveVisit').addEventListener('click', () => {
   window.addVisit(window.infoVisit, window.newDate, window.searchEmail, urlDataComunal);
   setTimeout(() => {
     const dataEmail = window.writeDataAjax(window.infoVisit);
-    window.sendEmail(dataEmail);
+    window.sendEmail(dataEmail), document.getElementById('infoModal').style.display = 'none';
   }, 4000);
 });

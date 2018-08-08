@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
+ @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 *{
   font-family: 'Montserrat', sans-serif;
@@ -78,7 +78,9 @@ p{
 img{
   margin: 0 !important;
 }
+@media (min-width: 768px){
 
+}
 
 /* foto y video */
 
@@ -153,6 +155,9 @@ float: left;
 
 @media (min-width: 768px){
 
+
+ /* check-in*/ 
+
   header{
     font-size: 2em !important;
     margin-top:2em !important;
@@ -189,7 +194,7 @@ float: left;
     margin-left: 1em;
   }
      
-  
+ 
 }
   
   
@@ -219,4 +224,4 @@ float: left;
     margin-right: 0;
   }
   
-}
+} 

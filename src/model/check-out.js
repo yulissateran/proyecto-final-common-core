@@ -11,5 +11,6 @@ window.checkOut = (infoVisit, newDate) => {
       }
     }
   });
+  window.referenceDatabase.ref().child('visitors/' + infoVisit.identificador).update({active: false});
 };
 

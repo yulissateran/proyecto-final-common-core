@@ -170,4 +170,25 @@ margin-right: 2em;
     margin-left: 30%;
     margin-top: 1em;
   }
-  
+  .divVisit{
+      margin: 15px auto ;
+      width: 70%;
+      height: 100px;
+    padding: 5px;
+    border: 1px solid #BFBFBF;
+    background-color: white;
+    box-shadow: 1px 1px 1px #aaaaaa;
+  }
+  .pictureVisitor{
+      height: 100%;
+      width: 100px;
+      margin: 0%;
+      margin-right: 20px;
+      border-radius: 1%;
+  }
+  ul{
+      list-style: none;
+  }
+  .nameVisitor{
+      color: #
+  }

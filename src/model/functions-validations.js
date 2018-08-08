@@ -13,3 +13,9 @@ window.validatorIdentification = (identification) => {
     return false;
   }
 };
+window.newDate = () => {
+  const date = new Date();
+  const mounthVisit = date.getMonth() + 1;
+  const dateVisit = `${date.getFullYear()}/${mounthVisit}/${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${+ date.getSeconds()}`;
+  return dateVisit;
+};
