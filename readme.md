@@ -24,3 +24,16 @@ Se plantearon las siguientes historias de usuario de acuerdo a la investigación
 ### Lineamientos del cliente
 Comunal es una empresa de coworking que ofrece diferentes opciones de espacios para todo tipo de empresas. Desde oficinas privadas para 200 personas, espacios Flex para nuevos emprendimientos, hasta Escritorios Dedicados para pequeñas empresas o equipos pequeños de emprendedores. Tiene una cultura organizacional que lo distingue de otras empresas de coworking pues prima el trato familiar y amical, llamándose a cada miembro de las oficinas "comuneros".
 
+### Benchmarking
+Realizamos la investigación de 03 lugares en particular que cuentan con buenas prácticas en registro de visitantes y nos pueden dar un mayor acercamiento al objetivo y uso de herramientas digitales para el registro de visitantes.
+
+| Organización                | Proceso de registro | Requisitos solicitados | Tiempo empleado |
+|-------------                | ------------------- | ---------------------- | --------------- |
+| ** PUCP **                  | 
+| Tipo: Institución educativa |
+| peruana.                    |
+| Cuenta con un registro de   |
+| visitantes virtual y        |
+| presencial.                 |
+| Destaca por la seguridad en |
+| el proceso de registro.     |
