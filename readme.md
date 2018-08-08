@@ -180,4 +180,5 @@ Se realizó el testing del prototipo con los usuarios visitantes para validar la
 
 ##
 * En el despliegue en Gh-pages, se ha implementado una primera vista en donde se debe seleccionar "Vista de administrador" y "Vista de usuario", debido a que tenemos 02 interfaces que, si bien estan conectadas a través de la data, no se conectan con ningún botón puesto que serán manejadas por usuarios diferentes. Se optó por colocar estos primeros botones para que se pueda revisar ambas interfaces en el Gh-pages. Para un siguiente versión, se plantea implementar un registro de Administrador con Login y contraseña.
-![first-view](img/first-view.jpeg)
+
+![first-view](img/first-view.png)
