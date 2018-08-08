@@ -29,6 +29,32 @@ Realizamos la investigación de 03 lugares en particular que cuentan con buenas 
 
 ![benchmarking-table](img/benchmarking.png)
 
+### Análisis de competencia
+Identificamos como competencia directa a la empresa WeWork, empresa de coworking internacional con varias sedes en el país, quien en la actualidad cuenta con un registro virtual de visitantes. En sus sedes en el extranjero, cuentan con un registro anticipado de visitantes a través de una aplicación. Este registro debe hacerlo previamente el anfitrión, ingresando los datos y fotografía del invitado y subiendola a la app.
 
+En sus sedes en el país, sus sistemas de registro varían entre el sistema electrónico a través de tablets y el sistema tradicional, donde el recepcionista toma los datos del visitado en una tabla.
+
+### Entrevistas
+Se plantearon 03 tipos de entrevistas: 01 al cliente, en este caso, la empresa de coworking Comunal, 01 a un encargado de registro de un edificio, y 01 a usuarios que suelen visitar empresas y utilizar diferentes sistemas de registros. A continuación el listado de preguntas que se realizaron a cada tipo de usuarios:
+
+**Guía de preguntas - Cliente**
+1. ¿Cuántas empresas funcionan dentro de Comunal?
+2. Durante el día, ¿cuántas visitas reciben aproximadamente?
+3. ¿Qué datos les solicitan a las personas que vienen a visitar?
+4. ¿Cuál es el sistema que usan para el registro de visitantes?
+5. Si pudieran cambiar este sistema, ¿qué implementarían?
+6. ¿Qué opinan sobre la implementación de un sistema tecnológico para el registro de visitantes?
+7. ¿Qué opinan sobre darle la opción al visitante de elegir a quién viene a ver?
+8. ¿Qué pasaría si las notificaciones de visita fueran por correo?
+9. ¿En qué parte del edificio debería ubicarse esta aplicación?
+
+**Guía de preguntas - Encargado de registro**
+1. ¿Cuál es el proceso que siguen usualmente para el registro de visitantes?
+2. ¿Se conoce previamente el nombre de visitantes que llegarán?
+3. ¿Tienen algún formato o interfaz para el registro de visitas?
+4. ¿Considera que les sería útil tener una interfaz donde el visitante se registre solo?
+
+
+#### Entrevista a cliente:
 
  
