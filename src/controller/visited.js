@@ -8,7 +8,9 @@ document.getElementById('register').addEventListener('click', () => {
 document.getElementById('closeButton').addEventListener('click', () => {
   document.getElementById('infoModal').style.display = 'none';
 });
+
 document.addEventListener('DOMContentLoaded', window.showDashboardAdmin(document.getElementById('containerVisits')));
+
 document.getElementById('saveVisit').addEventListener('click', ()=>{
   const infoVisit = {
     identificador: document.getElementById('identification').value,

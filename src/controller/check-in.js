@@ -40,8 +40,6 @@ document.getElementById('nextStep').addEventListener('click', ()=>{
   window.registerVisitorInFirebase(window.referenceDatabase, window.visitorInformation, window.newDate);
   document.getElementById('photoRegisterContainer').style.display = 'none';
   document.getElementById('confirmContainer').style.display = 'inherit';
-  
-
 });
 
 document.getElementById('close').addEventListener('click', ()=>{
