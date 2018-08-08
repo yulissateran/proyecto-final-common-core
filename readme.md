@@ -10,16 +10,6 @@ Asimismo, como equipo nos organizamos en áreas de trabajo según lo siguiente:
 * 01 Diseñadora UX, quien se encargó de diseñar la experiencia de la aplicación (flujo, interacción, etc.), así como identificar, documentar y priorizar las historias de usuario para plasmarlos en el  diseño visual de la interfaz.
 * 02 Desarrolladoras Front-end, quienes debían implementar la interfaz de usuario diseñada (HTML/CSS/JS) y las pruebas unitarias.
 
-### Historias de usuario
-Se plantearon las siguientes historias de usuario de acuerdo a la investigación realizada (se especificará en el siguiente ítem):
-
-1. Yo, como nuevo visitante en Comunal, quiero poder registrarme en esta aplicación para poder ingresar a las instalaciones de forma rápida y sencilla.
-2. Yo, como nuevo visitante en Comunal, quiero poder seleccionar a la persona a quien vengo a visitar en la aplicación.
-3. Yo, como nuevo visitante en Comunal, luego de haberme registrado, quiero poder enviar una notificación a la persona que vengo a visitar a través de esta aplicación.
-4. Yo, como visitado, deseo poder recibir una notificación en mi correo cuando alguien viene a visitarme en mi oficina.
-5. Yo, como administrador de Comunal, quiero poder visualizar los datos, foto, hora de ingreso y salida del nuevo visitante en mi interfaz.
-6. Yo, como visitante, deseo poder registrar mi salida de las instalaciones de Comunal.
-
 ## Proceso de investigación
 ### Lineamientos del cliente
 Comunal es una empresa de coworking que ofrece diferentes opciones de espacios para todo tipo de empresas. Desde oficinas privadas para 200 personas, espacios Flex para nuevos emprendimientos, hasta Escritorios Dedicados para pequeñas empresas o equipos pequeños de emprendedores. Tiene una cultura organizacional que lo distingue de otras empresas de coworking pues prima el trato familiar y amical, llamándose a cada miembro de las oficinas "comuneros".
@@ -97,7 +87,7 @@ _2. ¿Se conoce previamente el nombre de visitantes que llegarán?_
 _3. ¿Tienen algún formato o interfaz para el registro de visitas?_
 - El registro se suele guardar en un control de visitas de un archivo Excel. Se registran los datos de la persona, su DNI, la oficina a dónde se dirige, la hora de ingreso y la hora de salida. 
 
-Los horarios de ingreso y salida nos sirven en caso se presente alguna novedad durante la visita de la persona, ello nos ayuda a verificar con las cámaras cualquier situación que haya ocurrido y permite ahorrar tiempo, pues ya no tendríamos que revisar los sucesos de todo el día para encontrar esos detalles en particular.
+    Los horarios de ingreso y salida nos sirven en caso se presente alguna novedad durante la visita de la persona, ello nos ayuda a verificar con las cámaras cualquier situación que haya ocurrido y permite ahorrar tiempo, pues ya no tendríamos que revisar los sucesos de todo el día para encontrar esos detalles en particular.
 
 _4. ¿Considera que les sería útil tener una interfaz donde el visitante se registre solo?_
 - Sería valioso siempre que se hiciera previo a la visita, porque muchos se molestan cuando esperan o el registro se les hace demasiado largo. Quieren que se les atienda rápido y que haya alguien siempre que les de alguna respuesta. Si el proceso entre que la persona visitada lee el correo, lo confirma y acepta es muy largo, sería muy tedioso para el visitante y para la recepcionista.
@@ -108,14 +98,38 @@ _1. Cuando visitas empresas, sea por entrevistas u otros motivos, ¿qué tipo de
 - Todos los registros que hasta ahora he encontrado, son con DNI. En algunos te piden el DNI en recepción y lo tienes que dejar, y en otros te dan una tarjeta que te permite subir al ascensor, pero sólo al piso al que indicaste que irías. Pero siempre hay una recepción y te entregan un fotocheck.
 
 _2. ¿Qué datos usualmente te piden para poder ingresar a dichas empresa?_
-Mi DNI, de donde vengo, y a quién busco. A veces me piden el piso u oficina que estoy buscando.
+- Mi DNI, de donde vengo, y a quién busco. A veces me piden el piso u oficina que estoy buscando.
 
 _3.	¿Qué opinas del proceso de registro de visitas de esas empresas?_
-Es bastante seguro para las mismas empresas. Una vez me olvidé el DNI cuando llegué y tuve que llamar a la persona que me había invitado para que mande correo y recién ahí pude ingresar. Creo que lo que molesta es la idea de esperar demasiado tiempo.
+- Es bastante seguro para las mismas empresas. Una vez me olvidé el DNI cuando llegué y tuve que llamar a la persona que me había invitado para que mande correo y recién ahí pude ingresar. Creo que lo que molesta es la idea de esperar demasiado tiempo.
 
 _4.¿Te gustaría que las empresas implementen este tipo de registro?_
-Sí sería bueno, pero de todas maneras considero que es importante que el usuario use su DNI como identificación porque así es más seguro y se podrá registrar el horario salida.
+- Sí sería bueno, pero de todas maneras considero que es importante que el usuario use su DNI como identificación porque así es más seguro y se podrá registrar el horario salida.
 
 _5.	¿Has visitado empresas con registro de visitantes virtual? Es decir, donde te registres en una Tablet o PC por tu cuenta._
-Hasta el momento no, todas las que he visitado tienen el registro tradicional.
+- Hasta el momento no, todas las que he visitado tienen el registro tradicional.
  
+
+
+
+ 
+
+### Usuarios identificados
+Se identificaron 03 tipos de usuarios: visitante, visitado y administrador/recepcionista de Comunal, para los cuales se realizaron las siguientes **Historias de Usuario**:
+
+1. Yo, como nuevo visitante en Comunal, quiero poder registrarme en esta aplicación para poder ingresar a las instalaciones de forma rápida y sencilla.
+2. Yo, como nuevo visitante en Comunal, quiero poder seleccionar a la persona a quien vengo a visitar en la aplicación.
+3. Yo, como nuevo visitante en Comunal, luego de haberme registrado, quiero poder enviar una notificación a la persona que vengo a visitar a través de esta aplicación.
+4. Yo, como visitado, deseo poder recibir una notificación en mi correo cuando alguien viene a visitarme en mi oficina.
+5. Yo, como administrador de Comunal, quiero poder visualizar los datos, foto, hora de ingreso y salida del nuevo visitante en mi interfaz.
+6. Yo, como visitante, deseo poder registrar mi salida de las instalaciones de Comunal.
+
+### Principales problemas a resolver según usuarios identificados
+1. El cliente (administrador/recepcionista de Comunal) no cuenta con un sistema de registro centralizado que le entregue datos que pueda analizar ni usar en un futuro para sus objetivos comerciales y de seguridad.
+2. El visitante debe pasar por dos filtros de seguridad para poder llegar a su destino, lo cual genera molestias y uso del doble del tiempo de registro y espera.
+3. La persona visitada debe esperar a recibir el mensaje en WhatsApp o llamada por teléfono para poder enterarse de que sus invitados han llegado.
+
+### Conclusiones
+Siguiendo las necesidades del cliente y los lineamientos de su cultura organizacional, consideramos que es importante implementar un sistema de registro que involucre en gran medida el contacto humano y la familiaridad del recepcionista. 
+ 
+Para esto, planteamos dos interfaces: una que le permita al usuario registrar sus datos por si solo y otra que le permita al recepcionista registrar a quién viene a visitar el usuario y guardar la hora de ingreso. De esta manera estaríamos integrando tecnología con el trato humano que tan importante es para el cliente.
