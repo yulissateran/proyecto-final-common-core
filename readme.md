@@ -54,7 +54,68 @@ Se plantearon 03 tipos de entrevistas: 01 al cliente, en este caso, la empresa d
 3. ¿Tienen algún formato o interfaz para el registro de visitas?
 4. ¿Considera que les sería útil tener una interfaz donde el visitante se registre solo?
 
+**Guía de preguntas - Visitante**
+1. Cuando visitas empresas, sea por entrevistas u otros motivos, ¿qué tipo de sistemas de registros sueles encontrar?
+2. ¿Qué datos usualmente te piden para poder ingresar a dichas empresa?
+3. ¿Qué opinas del proceso de registro de visitas de esas empresas?
+4. ¿Has visitado empresas con registro de visitantes virtual? Es decir, donde te registres en una Tablet o PC por tu cuenta.
+5. De ser afirmativo, ¿qué te pareció el proceso de registro? ¿Fue sencillo? ¿Fue difícil? ¿Qué datos te pidieron?
+6. De ser negativo, ¿te gustaría que las empresas implementen este tipo de registro?
 
-#### Entrevista a cliente:
+#### Entrevista a cliente: Diego e Ivanna (Administración de Comunal)
+_1. ¿Cuántas empresas funcionan dentro de Comunal?_
+- Tenemos un aproximado de 50 empresas funcionando en este edificio.
 
+_2. ¿Durante el día cuantas visitas reciben aproximadamente?_
+- Depende mucho del día, al principio de la semana siempre hay mucho más que jueves o viernes, pero son aproximadamente entre 40 a 50 visitas.
+
+_3. ¿Qué datos les solicitan a las personas que vienen a visitar?_
+- En Comunal no le solicitamos ningún dato, pero la administración del edificio si tiene un registro de todos los ingresos y les piden el DNI. De lo que nos encargamos principalmente es de hacer el contacto de la visita con el cliente (oficinas). Como ya existe el primer filtro del edificio, consideramos que ya no es necesario pedir más datos a la visita, tan solo su nombre y a quién está buscando.
+
+_4. ¿Cuál es el sistema que usan para el registro de visitantes?_
+- No tenemos un sistema. Utilizamos un Whatsapp para comunicarnos con las empresas que están en nuestras instalaciones. 
+
+_5. Si pudieran cambiar este sistema, ¿qué implementarían?_
+- Creo que sería un beneficio tener un registro detallado de cuantas visitas recibimos, y así tendríamos un control más detallado y podríamos generar análisis de esos datos. Por ejemplo, cuantas visitas recibe cierta empresa, qué visitantes frecuentes tenemos, etc.
+
+_6. ¿Qué opinan sobre la implementación de un sistema tecnológico para el registro de visitantes?_
+- Sí ayudaría mucho, sin embargo, consideramos que también se pierde mucho el toque personalizado. En WeWork lo que sucede es que tú entras, llenas tus datos y le envían la notificación a la persona, pero no hay ese contacto humano de llegar y que la recepcionista te salude, y que ella se comunique con la persona a la que vienes a visitar. Para Comunal, es super importante ese toque humano, la calidez al ser recibido. Además, preferimos lo más sencillo, lo más amigable posible. Que este sistema no sea una carga más para el visitante.
+
+_7. ¿Qué opinan sobre darle la opción al visitante de elegir a quién viene a ver?_
+- Es delicado que una visita pueda ver las opciones de todo el personal que labora en cada oficina. Pasa también que viene gente que no conoce a quien va a ver, cuando vienen por entrevistas, ahí nosotros podemos derivarlos.
+
+_8. ¿Qué pasaría si las notificaciones de visita fueran por correo?_
+- Comunal se enfoca en darle todas las facilidades a los trabajadores; creemos que un correo más de recepción de Comunal no va a funcionar. Por eso usamos el whatsapp, porque es más directo y sencillo. Se usa el correo si, pero para visitar o eventos planificados con anticipación, porque podemos coordinar el numero de visitas, si necesitan estacionamiento, etc.
+
+#### Entrevista a encargado de registro: recepcionista de edificio Armando Paredes (Barranco)
+_1. ¿Cuál es el proceso que siguen usualmente para el registro de visitantes?_
+- Lo que hacemos primero es consultar a qué oficina va y el motivo de su visita, con quien tiene la cita y de qué empresa viene. Se debe verificar eso con las personas que los invitaron, se les entrega un fotocheck y se les pide su documento de identidad. A veces se estanca un poco el proceso porque el invitado no conoce el número de la oficina o nosotros no tenemos todos los nombres de los trabajadores de cada oficina, entonces tenemos que llamar a la recepción de cada oficina y consultar para que aprueben el ingreso del visitante.
+
+_2. ¿Se conoce previamente el nombre de visitantes que llegarán?_
+- Las oficinas no suelen entregar una lista, eso solo pasa en caso de eventos especiales o reuniones planificadas con tiempo. Se verifican los DNI y nombres y solo así se dejan ingresar.
+
+_3. ¿Tienen algún formato o interfaz para el registro de visitas?_
+- El registro se suele guardar en un control de visitas de un archivo Excel. Se registran los datos de la persona, su DNI, la oficina a dónde se dirige, la hora de ingreso y la hora de salida. 
+
+Los horarios de ingreso y salida nos sirven en caso se presente alguna novedad durante la visita de la persona, ello nos ayuda a verificar con las cámaras cualquier situación que haya ocurrido y permite ahorrar tiempo, pues ya no tendríamos que revisar los sucesos de todo el día para encontrar esos detalles en particular.
+
+_4. ¿Considera que les sería útil tener una interfaz donde el visitante se registre solo?_
+- Sería valioso siempre que se hiciera previo a la visita, porque muchos se molestan cuando esperan o el registro se les hace demasiado largo. Quieren que se les atienda rápido y que haya alguien siempre que les de alguna respuesta. Si el proceso entre que la persona visitada lee el correo, lo confirma y acepta es muy largo, sería muy tedioso para el visitante y para la recepcionista.
+
+#### Entrevista con visitante: publicista de la empresa Liquid
+
+_1. Cuando visitas empresas, sea por entrevistas u otros motivos, ¿qué tipo de sistemas de registros sueles encontrar?_
+- Todos los registros que hasta ahora he encontrado, son con DNI. En algunos te piden el DNI en recepción y lo tienes que dejar, y en otros te dan una tarjeta que te permite subir al ascensor, pero sólo al piso al que indicaste que irías. Pero siempre hay una recepción y te entregan un fotocheck.
+
+_2. ¿Qué datos usualmente te piden para poder ingresar a dichas empresa?_
+Mi DNI, de donde vengo, y a quién busco. A veces me piden el piso u oficina que estoy buscando.
+
+_3.	¿Qué opinas del proceso de registro de visitas de esas empresas?_
+Es bastante seguro para las mismas empresas. Una vez me olvidé el DNI cuando llegué y tuve que llamar a la persona que me había invitado para que mande correo y recién ahí pude ingresar. Creo que lo que molesta es la idea de esperar demasiado tiempo.
+
+_4.¿Te gustaría que las empresas implementen este tipo de registro?_
+Sí sería bueno, pero de todas maneras considero que es importante que el usuario use su DNI como identificación porque así es más seguro y se podrá registrar el horario salida.
+
+_5.	¿Has visitado empresas con registro de visitantes virtual? Es decir, donde te registres en una Tablet o PC por tu cuenta._
+Hasta el momento no, todas las que he visitado tienen el registro tradicional.
  
