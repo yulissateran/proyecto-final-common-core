@@ -8,7 +8,7 @@
     display:none;
 }
 
-#buttonsContainer{
+#container{
     margin-top: 20%;
 }
 
@@ -18,7 +18,7 @@ header{
     margin-top: 1em; 
 }
 
-#imagenContainer{
+.imagenContainer{
     width: 100%;
 }
 
@@ -74,6 +74,19 @@ img{
     border: none;
 }
 
+#buttonsIndex{
+    overflow: auto;
+}
+
+#adm{
+    float: left;
+    margin-left: 5% !important;
+}
+#visits{
+    float : right;
+    margin-right: 5% !important;
+    margin-left: 0 !important;
+}
 
 @media (min-width: 768px){
       
@@ -82,7 +95,7 @@ img{
     font-size: 2em;   
   }
 
-  #imagenContainer{
+  .imagenContainer{
     width: 60%;
     margin-top: 10%;
     margin-left: 25%;
@@ -120,7 +133,7 @@ img{
     margin-top: 7em;
   }
 
-  #imagenContainer{
+  .imagenContainer{
     width: 40%;
     margin-left: 33%;
     margin-top: 2em;

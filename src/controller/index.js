@@ -4,7 +4,7 @@ document.getElementById('adm').addEventListener('click', ()=>{
 });
 
 document.getElementById('visits').addEventListener('click', ()=>{
-    document.getElementById('buttonsContainer').style.display = 'none';
+    document.getElementById('container').style.display = 'none';
     document.getElementById('indexContainer').style.display = 'inherit';
 });
 
