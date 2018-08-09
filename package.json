@@ -7,7 +7,7 @@
     "htmlhint": "htmlhint  src/*.html test/*.html",
     "eslint": "eslint --ext .js src/model/ src/controller test/",
     "pretest": "npm run eslint && npm run htmlhint",
-    "test-browser": "opener ./test/index.html",
+    "test-browser": "opener  ./test/index.html",
     "test-node": "nyc mocha ./test/headless.js",
     "test": "npm run test-node && npm run test-browser"
   },

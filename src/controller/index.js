@@ -1,3 +1,4 @@
+
 document.getElementById('adm').addEventListener('click', ()=>{
     window.location.href = "view/visited.html";
 });
@@ -13,9 +14,7 @@ document.getElementById('checkoutButton').addEventListener('click', ()=>{
 });
 
 
-document.getElementById('registerButton').addEventListener('click', ()=>{
-    window.location.href = "view/check-in.html";
+document.getElementById('registerButton').addEventListener('click', () => {
+  window.location.href = 'view/check-in.html';
 });
-
-
 
