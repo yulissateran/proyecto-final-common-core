@@ -23,3 +23,4 @@ document.getElementById('saveVisit').addEventListener('click', () => {
     window.sendEmail(dataEmail), document.getElementById('infoModal').style.display = 'none';
   }, 4000);
 });
+
