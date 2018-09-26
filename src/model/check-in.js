@@ -50,7 +50,7 @@ window.takePicture = (currentImg, canvas, camera, visitorInformation) => {
   visitorInformation.pictureVisitor = img;
   currentImg.setAttribute('src', img);
   return img;
-};
+};  
 /* *************************************Escribe datos en firebase*********************************************+ */
 
 
