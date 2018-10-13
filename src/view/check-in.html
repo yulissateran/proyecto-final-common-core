@@ -6,71 +6,74 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Registro de visitante</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" media="screen" href="assets/css/check-in.css" />
-  <link rel="stylesheet" type="text/css" media="screen" href="assets/css/index.css" />
 </head>
-<body>
-  <div id="registerContainer">
-    <header>Ingresar datos del visitante</header>
-    <form>
-      <div class="inputContainer">
-        <label for="name">Nombres</label>
-        <input type="text"  id="name">
-      </div>
-      <div id="msgErrorName"></div>
-      <div class="inputContainer">
-        <label for="identification">DNI</label>
-        <input type="text"  id="identification">
-      </div>
-      <div id="msgErrorIdentification"></div>
-      <div class="inputContainer">
-        <label for="company">Empresa y/o asociación a la que pertenece</label>
-        <input type="text"  id="company">
-      </div>
-    </form>
-    <div class="buttonsContainer">
-      <button class="checkInButtons" id="back"> <img class="arrowIcons" src="assets/img/back.png"> VOLVER </button>
-      <button class="checkInButtons" id="next">SEGUIR <img class="arrowIcons" src="assets/img/right-arrow.png" alt="right icon"> </button>
-    </div> 
-  </div>
- 
-  <div id="logoContainer">
-    <img src="assets/img/comunal-logo.png" alt="logo comunal">
-  </div>
 
-  <div id="photoRegisterContainer">
-    <h1>¡Sonrie!</h1>
-    <div id="cameraContainer">
-      <video id="video" ></video>  
-      <canvas id="canvas" style="display: none;" width="250" height="250"></canvas>
-      <button id="takePicture">Tomar foto</button>
-    </div>
-    <div id="photoContainer">
-      <div id="image">
-        <img id="img">
-      </div>
-      
+<body>
+  <header>
+
+  </header>
+  <main>
+    <section class="cointainer"></section>
+    <section class="container"></section>
+  </main>
+
+  <div id="registerContainer">
+      <header>Ingresar datos del visitante</header>
+      <form>
+        <div class="inputContainer">
+          <label for="name">Nombres</label>
+          <input type="text"  id="name">
+        </div>
+        <div id="msgErrorName"></div>
+        <div class="inputContainer">
+          <label for="identification">DNI</label>
+          <input type="text"  id="identification">
+        </div>
+        <div id="msgErrorIdentification"></div>
+        <div class="inputContainer">
+          <label for="company">Empresa y/o asociación a la que pertenece</label>
+          <input type="text"  id="company">
+        </div>
+      </form>
       <div class="buttonsContainer">
-        <button class="checkInButtons" id="anotherPic"> <img class="arrowIcons" src="assets/img/back.png"> VOLVER </button>
-        <button class="checkInButtons" id="nextStep">SEGUIR <img class="arrowIcons" src="assets/img/right-arrow.png" alt="right icon"> </button>
+        <button class="checkInButtons" id="back"> <img class="arrowIcons" src="assets/img/back.png"> VOLVER </button>
+        <button class="checkInButtons" id="next">SEGUIR <img class="arrowIcons" src="assets/img/right-arrow.png" alt="right icon"> </button>
+      </div> 
+    </div>
+    <div id="photoRegisterContainer">
+      <h1>¡Sonrie!</h1>
+      <div id="cameraContainer">
+        <video id="video" ></video>  
+        <canvas id="canvas" style="display: none;" width="250" height="250"></canvas>
+        <button id="takePicture">Tomar foto</button>
+      </div>
+      <div id="photoContainer">
+        <div id="image">
+          <img id="img">
+        </div>
+        
+        <div class="buttonsContainer">
+          <button class="checkInButtons" id="anotherPic"> <img class="arrowIcons" src="assets/img/back.png"> VOLVER </button>
+          <button class="checkInButtons" id="nextStep">SEGUIR <img class="arrowIcons" src="assets/img/right-arrow.png" alt="right icon"> </button>
+        </div>
       </div>
     </div>
-  </div>
-  <div id="confirmContainer">
-    <h1>Te esperamos en recepción</h1>
-    <div id="checkContainer">
-      <img src="assets/img/check.png" alt="check notification" id="check">
-      <p id="confirmMessage">Gracias por registrarte</p>
+    <div id="confirmContainer">
+      <h1>Te esperamos en recepción</h1>
+      <div id="checkContainer">
+        <img src="assets/img/check.png" alt="check notification" id="check">
+        <p id="confirmMessage">Gracias por registrarte</p>
+      </div>
+      <button id="close">Cerrar</button>
     </div>
-    <button id="close">Cerrar</button>
-  </div>
+
 
   <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
   <script src="../model/firebase.js"></script>
   <script src="../model/functions-validations.js"></script>
   <script src="../model/check-in.js"></script>
   <script src="../controller/check-in.js"></script>
- 
+
 </body>
 
 </html>

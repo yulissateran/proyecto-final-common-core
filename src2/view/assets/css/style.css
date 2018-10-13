@@ -1,0 +1,40 @@
+.bg-main {
+  background-color: #066B75;
+}
+/* .heigth-nav {
+  height: 10vh;
+} */
+ /* .heigth-all {
+   height: 90vh;
+ } */
+
+ 
+ .btn-ligth-yellow {
+  border-color: #FFC107;
+  background-color: transparent;
+  color: #FFC107;
+ }
+ .btn-ligth-yellow:hover {
+   background-color: #FFC107;
+   color: white;
+ }
+ .btn-yellow {
+  background-color: #FFC107;
+ }
+ .bg-main-img {
+   background-image: url("http://www.forbesargentina.com/wp-content/uploads/2018/05/WeWork-Vicente-Lopez-3.jpg");
+   background-position: center center;
+   background-repeat: no-repeat;
+   background-size: cover;
+  }  
+  .width-all {
+    width: 100%;
+  }
+.size-form {
+  /* height: 80vh; */
+  /* width: 60vw; */
+}
+/* #canvas {
+  width: 250px;
+  height: 250px;
+} */
