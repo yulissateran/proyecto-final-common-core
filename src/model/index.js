@@ -20,12 +20,12 @@ window.takePicture = (canvas, camera) => {
 /* *************************************Escribe datos en firebase*********************************************+ */
 
 
-window.registerVisitorInFirebase = (referenceDatabase, visitorInformation, newDate) => {
+window.registerVisitorInFirebase = (referenceDatabase, visitorInformation) => {
   return referenceDatabase.ref('visitors/' + visitorInformation.id).update({
     name: visitorInformation.name,
     picture: visitorInformation.picture,
     host: visitorInformation.host,
-    dateRegister: `${new Date().getHours()} ${new Date().getMinutes()}`,
+    dateRegister: `${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate()} ${new Date().getHours()}: ${new Date().getMinutes()}`,
     date: firebase.database.ServerValue.TIMESTAMP
   });
 };
@@ -70,7 +70,7 @@ window.writeDataAjax = (infoVisit)=>{
       'from_name': 'Comunal coworking',
       'to': [
         {
-          'email': infoVisit.hostEmail,
+          'email': 'yulissa.lteran@gmail.com',
           'name': infoVisit.host,
           'type': 'to'
         }
@@ -100,8 +100,8 @@ window.showDashboardAdmin = (containerVisits) => {
     containerVisits.innerHTML = '';  
     snapshot.forEach(element => {   
       visits  += `
-    <div class="row my-2">
-    <div class="card col-md-4 col-lg-3 mt-1">
+    
+    <div class="card col-6 col-md-4 col-lg-3 mt-1">
       <img class="card-img-top mt-2" src="${element.val().picture}"
         alt="Card image cap">
       <h5 class="card-title text-center">${element.val().name}</h5>
@@ -110,7 +110,7 @@ window.showDashboardAdmin = (containerVisits) => {
           <h6 class="mr-2 card-title">DNI:</h6>
           <span class="card-text">${element.key}</span></li>
         <li class="list-group-item">
-          <h6 class="mr-2 card-title">Hora de visita:</h6>
+          <h6 class="mr-2 card-title">Fecha y hora de visita:</h6>
           <span class="card-text">${element.val().dateRegister}</span>
         </li>
         <li class="list-group-item">
@@ -118,8 +118,7 @@ window.showDashboardAdmin = (containerVisits) => {
           <span class="card-text">${element.val().host}</span>
         </li>
       </ul>
-    </div>
-  </div> `;
+    </div>`;
     });
     containerVisits.innerHTML = visits; 
   });

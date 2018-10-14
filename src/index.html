@@ -51,19 +51,17 @@
             <div class="form-group col-11 my-2">
               <label for="">Anfitrión<span class="text-danger">*</span></label>
               <select id="host" class="form-control">
-                <option selected value="yulissa.lteran@gmail.com">Alejandra Ramirez</option>
-                <option value="yulissa.lteran@gmail.com">Daniela Gonzales</option>
-                <option value="yulissa.lteran@gmail.com">Ricardo Rojas</option>
-                <option value="yulissa.lteran@gmail.com">Berta Nuñez</option>
+                <option selected >Alejandra Ramirez</option>
+                <option >Daniela Gonzales</option>
+                <option >Ricardo Rojas</option>
+                <option>Berta Nuñez</option>
               </select>
             </div>
           </div>
           <div class="row mt-5 justify-content-center">
             <h6 class="col-12 text-center card-title">¡Tomate una foto!</h6>
             <video id="video" class="col-12 mt-5 p-0" height="250px"></video>
-            <!-- <div class="col-7"> -->
               <div class="invalid-feedback col-md-5" id="invalidFeedback">Por favor verifica que tus datos sean correctos</div>
-            <!-- </div> -->
             <canvas id="canvas" class="d-none" height="250px" ; width="250px"></canvas>
           </div>
           <div class="row d-flex justify-content-center m-5">
@@ -91,11 +89,15 @@
         <div class="col-md-11 my-5">
           <h2 class="text-center">Tablero de visitas</h2>
         </div>
-        <div class="col-md-11 mb-4" id="containerVisits">
+        <div class="col-md-11 mb-4" >
+            <div class="row " id="containerVisits">
+
+            </div>
         </div>
       </div>
     </section>
   </main>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
   <script src="./model/firebase.js"></script>
   <script src="./model/functions-validations.js"></script>

@@ -18,8 +18,8 @@ document.getElementById('continueRegistration').addEventListener('click', (event
     document.getElementById('continueRegistration').disabled = true;
     window.registerVisitorInFirebase(window.referenceDatabase, visitorInformation, window.newDate)
       .then(() => {
-       const data = window.writeDataAjax(visitorInformation);
-       window.sendEmail(data);
+        const data = window.writeDataAjax(visitorInformation);
+        window.sendEmail(data);
       }).then(()=>{
         document.getElementById('FormDataVisitor').classList.add('d-none');
         document.getElementById('sectionRegisterOk').classList.remove('d-none');
@@ -53,8 +53,8 @@ document.getElementById('goVisitor').addEventListener('click', ()=>{
   document.getElementById('goVisitor').classList.add('d-none');
   document.getElementById('goAdministration').classList.remove('d-none');
 });
-
-
+// console.log(`${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate()} ${new Date().getHours()}: ${new Date().getMinutes()}`);
+// console.log(new Date().getDate())
 document.getElementById('acept').addEventListener('click', ()=>{
   location.reload();
 });
@@ -62,8 +62,6 @@ document.getElementById('acept').addEventListener('click', ()=>{
 // let date = new Date();
 // const urlDataComunal = '../companys/comunal.json';
 // document.getElementById('date').innerHTML = `${date.getDate()}/${(date.getMonth() + 1)}/${date.getFullYear()}`;
-
-
 // document.addEventListener('DOMContentLoaded', window.showDashboardAdmin(document.getElementById('containerVisits')));
 // document.getElementById('saveVisit').addEventListener('click', () => {
 //   window.infoVisit = {

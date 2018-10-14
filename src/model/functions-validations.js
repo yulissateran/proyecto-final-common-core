@@ -1,6 +1,6 @@
 /* *******************************************FUNCIONES DE VALIDACIÓN*******************************/
 window.validatorName = (name) => {
-  if (/^([A-Za-z\s-á-´zÁ]{7,})+$/g.test(name)) return true;
+  if (/^([A-Za-zñÑáéíóúÁÉÍÓÚ\s]{7,})+$/g.test(name)) return true;
   return false;
 };
 window.validatorIdentification = (identification) => {
