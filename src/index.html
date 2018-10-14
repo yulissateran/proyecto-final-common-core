@@ -5,31 +5,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+    crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" media="screen" href="./view/assets/bootstrap/css/bootstrap.min.css" />
   <link rel="stylesheet" type="text/css" href="./view/assets/css/style.css" />
-  <title>YouWork</title>
+  <title>Registro de visitas</title>
 </head>
 
-<body class="bg-main-img" >
-  <header class="fixed-top">
-    <nav class="navbar  bg-main heigth-nav ">
+<body class="bg-main-img" id="body">
+  <header class="fixed-top mb-5">
+    <nav class="navbar  bg-main heigth-nav  py-3 mb-2">
       <form class="d-flex justify-content-between ">
         <button class="btn btn-ligth-yellow" type="button" id="goAdministration">Vista de administrador</button>
+        <button class="btn btn-ligth-yellow d-none" type="button" id="goVisitor">Vista de visitante</button>
       </form>
     </nav>
   </header>
   <main>
-    <section class="container-fluid  my-5 d-flex justify-content-center align-items-center "  id="sectionRegisterVisitor">
-      <div class="row d-flex justify-content-center bg-main-img">
-        <form class="col-12 col-md-8  bg-white  size-form p-4 m-2 " id="FormDataVisitor">
-          <div class="form-row my-4">
-            <div class="form-group">
-              <h1 class="text-center my-3 mb-5">Registro de visitantes</h1>
-              <h6 class="text-center my-3">Bienvenido!!  En esta plataforma puedes ingresar
-                 tus datos y enviarselos a la persona que vienes a visitar.
+    <section class="container-fluid mt-4 d-flex justify-content-center align-items-center " id="sectionRegisterVisitor">
+      <div class="row d-flex  my-3 justify-content-center">
+        <form class="col-12 col-md-8  bg-white  p-4 mt-5 mb-2" id="FormDataVisitor">
+          <div class="form-row ">
+            <div class="form-group col-8 m-auto">
+              <h1 class="text-center my-3 mb-3">Registro de visitantes</h1>
+              <h6 class="text-center my-3">Bienvenido!! En esta plataforma puedes ingresar tus datos y enviarselos a la persona
+                que vienes a visitar.
               </h6>
-              </div>
+            </div>
             <div class="form-group col-11 my-2">
               <label for="inputEmail4">Nombre completo<span class="text-danger">*</span></label>
               <input type="text" class="form-control" id="nameVisitor" placeholder="Nombre completo">
@@ -49,64 +51,48 @@
             <div class="form-group col-11 my-2">
               <label for="">Anfitrión<span class="text-danger">*</span></label>
               <select id="host" class="form-control">
-                <option selected>Alejandra Ramirez</option>
-                <option>Daniela Gonzales</option>
+                <option selected value="yulissa.lteran@gmail.com">Alejandra Ramirez</option>
+                <option value="yulissa.lteran@gmail.com">Daniela Gonzales</option>
+                <option value="yulissa.lteran@gmail.com">Ricardo Rojas</option>
+                <option value="yulissa.lteran@gmail.com">Berta Nuñez</option>
               </select>
             </div>
           </div>
-          <div class="row mt-5">
+          <div class="row mt-5 justify-content-center">
             <h6 class="col-12 text-center card-title">¡Tomate una foto!</h6>
-            <video id="video" class="col-12 mt-5 p-0" height="250px" ></video>
+            <video id="video" class="col-12 mt-5 p-0" height="250px"></video>
+            <div class="col-7">
+              <div class="invalid-feedback " id="invalidFeedback">Por favor verifica que tus datos sean correctos</div>
+            </div>
             <canvas id="canvas" class="d-none" height="250px" ; width="250px"></canvas>
           </div>
           <div class="row d-flex justify-content-center m-5">
-          <button class="btn bg-main text-white p-2" id="continueRegistration">Tomar foto y continuar</button>            
+            <button class="btn bg-main text-white p-2" id="continueRegistration">Tomar foto y continuar</button>
           </div>
-        </form>  
-        <div class="col-8  my-5 pt-5 d-none" id="sectionRegisterOk">
-            <div class="row justify-content-center p-2 pt-5" style="font-size: 5rem;">
-                <i class="far fa-check-circle my-5"></i>
-              <h6 class="pt-5">¡Tu visita fue registrada!
-                 Por favor toma asiento mientras esperamos la respuesta de tu anfitrión 😉</h6>
-                 <button class="btn bg-main text-white p-2 m-5" id="acept">Aceptar</button>
+        </form>
+        <div class="col-8  my-5  bg-white d-none size-form align-items-center" id="sectionRegisterOk" style=" min-width: 50vw; max-width: 98vw;">
+          <div class="row justify-content-center align-items-center p-2 mt-5 " style="font-size: 5rem;" id="">
+            <div class="pt-2 col-10 col-md-6 m-auto">
+              <div class="row justify-content-center mb-5">
+                <i class="far fa-check-circle mx-auto"></i>
+              </div>
+              <h6 class="mb-5">¡Tu visita fue registrada! Por favor pasa a recepción, enseguida nos comunicaremos contigo😉</h6>
+              <div class="row justify-content-center mb-5">
+                <button class="btn bg-main text-white px-2" id="acept">Aceptar</button>
+              </div>
             </div>
-
+          </div>
         </div>
       </div>
     </section>
+
     <section class="container justify-content-center d-none" id="sectionAdministrator">
-      <div class="row justify-content-center my-5">
-        <div class="col-md-11 mb-4">
+      <div class="row my-5">
+        <div class="col-md-11 my-5">
           <h2 class="text-center">Tablero de visitas</h2>
         </div>
-
-        <div class="col-md-11 ">
-          <div class="row bg-secondary">
-            <h5 class="col-md-6">Fecha:</h5>
-            <h5 class="col-md-6">Visitas totales: #</h5>
-          </div>
-          <div class="row my-2">
-            <div class="card col-md-4  mt-1">
-              <img class="card-img-top mt-2" src="http://www.forbesargentina.com/wp-content/uploads/2018/05/WeWork-Vicente-Lopez-3.jpg"
-                alt="Card image cap">
-              <h5 class="card-title text-center">Julio Jaime</h5>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">
-                  <h6 class="mr-2 card-title">DNI:</h6>
-                  <span class="card-text">12345634</span></li>
-                <li class="list-group-item">
-                  <h6 class="mr-2 card-title">Hora de visita:</h6>
-                  <span class="card-text">15:00</span>
-                </li>
-                <li class="list-group-item">
-                  <h6 class="mr-2 card-title">Anfitrión:</h6>
-                  <span class="card-text">Alejandra Ramirez</span>
-                </li>
-              </ul>
-            </div>
-          </div>
+        <div class="col-md-11 mb-4" id="containerVisits">
         </div>
-
       </div>
     </section>
   </main>

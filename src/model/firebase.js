@@ -1,11 +1,11 @@
 /* global firebase */
 let config = {
-  apiKey: 'AIzaSyCGQvJrcWt8bQ7wB3A2AXqkHqld-NYAVJw',
-  authDomain: 'social-network-967b3.firebaseapp.com',
-  databaseURL: 'https://social-network-967b3.firebaseio.com',
-  projectId: 'social-network-967b3',
-  storageBucket: 'social-network-967b3.appspot.com',
-  messagingSenderId: '25029310975'
+  apiKey: "AIzaSyDcmv64tywumjoGgm_AJlqzplMAD1bZOwQ",
+  authDomain: "registro-de-visitantes-a36f9.firebaseapp.com",
+  databaseURL: "https://registro-de-visitantes-a36f9.firebaseio.com",
+  projectId: "registro-de-visitantes-a36f9",
+  storageBucket: "registro-de-visitantes-a36f9.appspot.com",
+  messagingSenderId: "1006043359936"
 };
 firebase.initializeApp(config);
 window.referenceDatabase = firebase.database();

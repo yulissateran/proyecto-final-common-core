@@ -1,13 +1,6 @@
 .bg-main {
   background-color: #066B75;
 }
-/* .heigth-nav {
-  height: 10vh;
-} */
- /* .heigth-all {
-   height: 90vh;
- } */
-
  
  .btn-ligth-yellow {
   border-color: #FFC107;
@@ -26,15 +19,13 @@
    background-position: center center;
    background-repeat: no-repeat;
    background-size: cover;
+   min-height: 96.5vh;
+   
   }  
   .width-all {
     width: 100%;
   }
 .size-form {
-  /* height: 80vh; */
-  /* width: 60vw; */
+  height: 78vh;
+ 
 }
-/* #canvas {
-  width: 250px;
-  height: 250px;
-} */

@@ -4,7 +4,6 @@ const visitorInformation = {};
 
 document.addEventListener('DOMContentLoaded', () => {
   window.accessTheCamera(camera);
-  console.log(new Date().getFullYear() ,new Date().getMonth() , new Date().getDate())
 });
 
 document.getElementById('continueRegistration').addEventListener('click', (event) => {
@@ -16,32 +15,49 @@ document.getElementById('continueRegistration').addEventListener('click', (event
   visitorInformation.picture = img;
 
   if (window.validateFormVisitor(visitorInformation)) {
-    console.log('valid');
-    console.log(visitorInformation)
+    document.getElementById('continueRegistration').disabled = true;
     window.registerVisitorInFirebase(window.referenceDatabase, visitorInformation, window.newDate)
       .then(() => {
-        console.log('registrado');
-        document.getElementById('sectionRegisterOk').classList.remove('d-none');
-        document.getElementById('FormDataVisitor').classList.remove('d-flex');
+       const data = window.writeDataAjax(visitorInformation);
+       window.sendEmail(data);
+      }).then(()=>{
         document.getElementById('FormDataVisitor').classList.add('d-none');
+        document.getElementById('sectionRegisterOk').classList.remove('d-none');
       });
   } else {
-    console.log('invalid')
     document.getElementById('invalidFeedbackName').classList.add('d-block');
     document.getElementById('invalidFeedbackId').classList.add('d-block');
+    document.getElementById('invalidFeedback').classList.add('d-block');
   }
 });
 
 document.getElementById('goAdministration').addEventListener('click', (event) => {
   event.preventDefault();
+  document.getElementById('body').classList.remove('bg-main-img');
   document.getElementById('sectionRegisterVisitor').classList.remove('d-flex');
   document.getElementById('sectionRegisterVisitor').classList.add('d-none');
   document.getElementById('sectionAdministrator').classList.remove('d-none');
+  document.getElementById('goVisitor').classList.remove('d-none');
+  document.getElementById('goAdministration').classList.add('d-none');
+  window.showDashboardAdmin(document.getElementById('containerVisits'));
 });
 
-document.getElementById('acept').addEventListener(()=>{
-  
-})
+document.getElementById('goVisitor').addEventListener('click', ()=>{
+  event.preventDefault();
+  document.getElementById('goAdministration').classList.remove('d-none');
+  document.getElementById('goVisitor').classList.add('d-none');
+  document.getElementById('body').classList.add('bg-main-img');
+  document.getElementById('sectionRegisterVisitor').classList.add('d-flex');
+  document.getElementById('sectionRegisterVisitor').classList.remove('d-none');
+  document.getElementById('sectionAdministrator').classList.add('d-none');
+  document.getElementById('goVisitor').classList.add('d-none');
+  document.getElementById('goAdministration').classList.remove('d-none');
+});
+
+
+document.getElementById('acept').addEventListener('click', ()=>{
+  location.reload();
+});
 
 // let date = new Date();
 // const urlDataComunal = '../companys/comunal.json';

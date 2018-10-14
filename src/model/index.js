@@ -21,12 +21,11 @@ window.takePicture = (canvas, camera) => {
 
 
 window.registerVisitorInFirebase = (referenceDatabase, visitorInformation, newDate) => {
-  return referenceDatabase.ref('visitors/' + `${new Date().getFullYear() } ${new Date().getMonth() } ${ new Date().getDate()}` + visitorInformation.id).update({
+  return referenceDatabase.ref('visitors/' + visitorInformation.id).update({
     name: visitorInformation.name,
     picture: visitorInformation.picture,
     host: visitorInformation.host,
-    dateRegister: newDate().dateFormat,
-    dateF: newDate().dateVisit,
+    dateRegister: `${new Date().getHours()} ${new Date().getMinutes()}`,
     date: firebase.database.ServerValue.TIMESTAMP
   });
 };
@@ -63,7 +62,7 @@ window.writeDataAjax = (infoVisit)=>{
     key: 'ZGiSDAUGJIgaCMIqm9ysPA',
     message: {
       html: `<div>
-              <span>Hola! ${infoVisit.visited} , ${infoVisit.nameVisitor} quiere visitarte hoy,
+              <span>Hola! ${infoVisit.host},  ${infoVisit.name} quiere visitarte hoy,
               comunicate con nosotros para confirmar su ingreso :) </span></div>`,
       'text': 'contactate con nosotros: 456765',
       'subject': 'tienes una visita nueva',
@@ -71,8 +70,8 @@ window.writeDataAjax = (infoVisit)=>{
       'from_name': 'Comunal coworking',
       'to': [
         {
-          'email': infoVisit.emailVisited,
-          'name': infoVisit.visited,
+          'email': infoVisit.hostEmail,
+          'name': infoVisit.host,
           'type': 'to'
         }
       ],
@@ -83,8 +82,6 @@ window.writeDataAjax = (infoVisit)=>{
   };
   return JSON.stringify(data);
 };
-
-
 
 
 window.sendEmail = (data) => {
@@ -98,20 +95,36 @@ window.sendEmail = (data) => {
 
 window.showDashboardAdmin = (containerVisits) => {
   window.referenceDatabase.ref('visitors/').on('value', (snapshot) => {
-    containerVisits.innerHTML = '';
-    snapshot.forEach(element => { 
-      containerVisits.innerHTML += `
-    <div class="divVisit">
-      <div><img class="pictureVisitor" src="${element.val().picture}"/></div>
-      <span class="nameVisitor"><strong>${element.val().name}</strong></span>
-      <ul>
-        <li>Identificación: ${element.key}</li>
-        <li>Visitante actual</li>
+    Object.keys(snapshot);
+    let  visits = '';
+    containerVisits.innerHTML = '';  
+    snapshot.forEach(element => {   
+      visits  += `
+    <div class="row my-2">
+    <div class="card col-md-4 col-lg-3 mt-1">
+      <img class="card-img-top mt-2" src="${element.val().picture}"
+        alt="Card image cap">
+      <h5 class="card-title text-center">${element.val().name}</h5>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <h6 class="mr-2 card-title">DNI:</h6>
+          <span class="card-text">${element.key}</span></li>
+        <li class="list-group-item">
+          <h6 class="mr-2 card-title">Hora de visita:</h6>
+          <span class="card-text">${element.val().dateRegister}</span>
+        </li>
+        <li class="list-group-item">
+          <h6 class="mr-2 card-title">Anfitrión:</h6>
+          <span class="card-text">${element.val().host}</span>
+        </li>
       </ul>
-    </div>`;
+    </div>
+  </div> `;
     });
+    containerVisits.innerHTML = visits; 
   });
 };
+
 
 // window.addVisit = (infoVisit, newDate, callback, url) => {
 //   const currentVisitor = window.referenceDatabase.ref('visitors/' + infoVisit.identificador);
