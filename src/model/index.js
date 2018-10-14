@@ -99,8 +99,7 @@ window.showDashboardAdmin = (containerVisits) => {
     let  visits = '';
     containerVisits.innerHTML = '';  
     snapshot.forEach(element => {   
-      visits  += `
-    
+      visits += `
     <div class="card col-6 col-md-4 col-lg-3 mt-1">
       <img class="card-img-top mt-2" src="${element.val().picture}"
         alt="Card image cap">
