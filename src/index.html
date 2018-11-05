@@ -14,7 +14,7 @@
 
 <body class="bg-main-img" id="body">
   <header class="fixed-top mb-5">
-    <nav class="navbar  bg-main heigth-nav  py-3 mb-2">
+    <nav class="navbar  bg-main heigth-nav  py-1 mb-2">
       <form class="d-flex justify-content-between ">
         <button class="btn btn-ligth-yellow" type="button" id="goAdministration">Vista de administrador</button>
         <button class="btn btn-ligth-yellow d-none" type="button" id="goVisitor">Vista de visitante</button>
@@ -24,22 +24,25 @@
   <main>
     <section class="container-fluid mt-4 d-flex justify-content-center align-items-center " id="sectionRegisterVisitor">
       <div class="row d-flex  my-3 justify-content-center">
-        <form class="col-12 col-md-8  bg-white  p-4 mt-5 mb-2" id="FormDataVisitor">
+        <form class="col-12 col-md-8  bg-white mb-2" id="FormDataVisitor">
+          <div class="row d-flex justify-content-center">
+            <div class="col-12 col-sm-10  text-center">
+                <h1 class="text-center my-3 my-3">Registro de visitantes</h1>
+                <h6 class="text-center my-3">Bienvenid@ al registro de visitas online de Comunal Coworking,
+                  por favor ingresa tus datos para registrarte.
+                </h6>
+            </div>             
+          </div>
           <div class="form-row ">
-            <div class="form-group col-8 m-auto">
-              <h1 class="text-center my-3 mb-3">Registro de visitantes</h1>
-              <h6 class="text-center my-3">Bienvenido!! En esta plataforma puedes ingresar tus datos y enviarselos a la persona
-                que vienes a visitar.
-              </h6>
-            </div>
-            <div class="form-group col-11 my-2">
+           
+            <div class="form-group col-12 my-2">
               <label for="inputEmail4">Nombre completo<span class="text-danger">*</span></label>
               <input type="text" class="form-control" id="nameVisitor" placeholder="Nombre completo">
               <div class="invalid-feedback" id="invalidFeedbackName">
                 Tu nombre completo debe tener más de 7 letras
               </div>
             </div>
-            <div class="form-group col-11 my-2">
+            <div class="form-group col-12 my-2">
               <label for="inputPassword4 col-11">DNI<span class="text-danger">*</span></label>
               <input type="text" class="form-control" id="idVisitor" placeholder="DNI">
               <div class="invalid-feedback" id="invalidFeedbackId">
@@ -47,8 +50,8 @@
               </div>
             </div>
           </div>
-          <div class="form-row mb-5">
-            <div class="form-group col-11 my-2">
+          <div class="form-row ">
+            <div class="form-group col-12 my-2">
               <label for="">Anfitrión<span class="text-danger">*</span></label>
               <select id="host" class="form-control">
                 <option selected >Alejandra Ramirez</option>
@@ -58,9 +61,9 @@
               </select>
             </div>
           </div>
-          <div class="row mt-5 justify-content-center">
+          <div class="row mt-2 justify-content-center">
             <h6 class="col-12 text-center card-title">¡Tomate una foto!</h6>
-            <video id="video" class="col-12 mt-5 p-0" height="250px"></video>
+            <video id="video" class="col-12 mt-2 p-0" height="250px"></video>
               <div class="invalid-feedback col-md-5" id="invalidFeedback">Por favor verifica que tus datos sean correctos</div>
             <canvas id="canvas" class="d-none" height="250px" ; width="250px"></canvas>
           </div>
@@ -74,7 +77,7 @@
               <div class="row justify-content-center mb-5">
                 <i class="far fa-check-circle mx-auto"></i>
               </div>
-              <h6 class="mb-5">¡Tu visita fue registrada! Por favor pasa a recepción, enseguida nos comunicaremos contigo😉</h6>
+              <h6 class="mb-5">Adelante, tu visita fue registrada😉</h6>
               <div class="row justify-content-center mb-5">
                 <button class="btn bg-main text-white px-2" id="acept">Aceptar</button>
               </div>
@@ -97,7 +100,7 @@
       </div>
     </section>
   </main>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
   <script src="./model/firebase.js"></script>
   <script src="./model/functions-validations.js"></script>
